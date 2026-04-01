@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -130,15 +130,15 @@ Stel dit in als uw apparaat moeite heeft om de uitvoer af te spelen. (d.w.z. hap
     <value>Waarschuwing: RF 0 is verliesloos!</value>
   </data>
   <data name="Video_LosslessWarningTooltip" xml:space="preserve">
-    <value>Een waarde van 0 betekent verliesloos en resulteert in een bestandsgrootte die groter is dan de oorspronkelijke bron, 
-tenzij de bron ook verliesloos was. 
+    <value>Een waarde van 0 betekent verliesloos en resulteert in een bestandsgrootte die groter is dan de oorspronkelijke bron,
+tenzij de bron ook verliesloos was.
 
-De schaal van x264 en x265 is logaritmisch en lagere waarden komen overeen met hogere kwaliteit. 
+De schaal van x264 en x265 is logaritmisch en lagere waarden komen overeen met hogere kwaliteit.
 
 Dus kleine waardestijgingen zullen resulteren in een toenemende stijging van de resulterende bestandsgrootte.</value>
   </data>
   <data name="AddPreset_PictureSizeMode" xml:space="preserve">
-    <value>Met deze voorinstelling kunt u desgewenst beeldinstellingen opslaan. Er zijn 3 modi: 
+    <value>Met deze voorinstelling kunt u desgewenst beeldinstellingen opslaan. Er zijn 3 modi:
 
 Geen: beeldinstellingen worden niet opgeslagen. Bij het laden van een bron blijven ze binnen de grenzen van de bronresolutie. Dit heeft ook invloed op anamorf, modulus, bijsnijden enz.
 
@@ -148,17 +148,17 @@ Bronmaximum: indien mogelijk altijd coderen met de resolutie van de bron.</value
   </data>
   <data name="About_GPL" xml:space="preserve">
     <value>Dit programma is gratis software; je kunt het verspreiden en/of
-wijzigen onder de voorwaarden van de GNU General Public 
-License zoals uitgegeven door de Free Software Foundation; 
+wijzigen onder de voorwaarden van de GNU General Public
+License zoals uitgegeven door de Free Software Foundation;
 versie 2 van de licentie, of (naar keuze) een latere versie.
 
-Dit programma wordt gedistribueerd in de hoop dat het nuttig 
-zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de 
+Dit programma wordt gedistribueerd in de hoop dat het nuttig
+zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de
 impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID
-VOOR EEN BIJZONDER DOEL. 
+VOOR EEN BIJZONDER DOEL.
 Zie de GNU General Public License voor meer details.
 
-Tezamen met dit programma heeft u een kopie van de GNU 
+Tezamen met dit programma heeft u een kopie van de GNU
 General Public License ontvangen. Is dit niet het geval, richt
 u dan tot de Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, VS .</value>
   </data>
@@ -204,7 +204,7 @@ u dan tot de Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Bo
   <data name="Main_DuplicateDestinationOnQueue" xml:space="preserve">
     <value>Er staan taken in de rij met hetzelfde doelpad. Kies een ander pad voor deze taak.
 
-U zou de opties voor automatische bestandsnaamgeving kunnen instellen in "Gereedschap -&gt; Voorkeuren -&gt; Uitvoerbestanden" 
+U zou de opties voor automatische bestandsnaamgeving kunnen instellen in "Gereedschap -&gt; Voorkeuren -&gt; Uitvoerbestanden"
 </value>
   </data>
   <data name="Main_JobsPending_addon" xml:space="preserve">
@@ -245,7 +245,7 @@ U zou de opties voor automatische bestandsnaamgeving kunnen instellen in "Gereed
   </data>
   <data name="Main_PresetUpdateNotification" xml:space="preserve">
     <value>HandBrake heeft vastgesteld dat de ingebouwde voorinstellingen verouderd zijn... Deze worden nu bijgewerkt.
-De aangepaste voorinstellingen zijn niet bijgewerkt en moeten mogelijk opnieuw worden aangemaakt door ze te verwijderen en opnieuw toe te voegen. 
+De aangepaste voorinstellingen zijn niet bijgewerkt en moeten mogelijk opnieuw worden aangemaakt door ze te verwijderen en opnieuw toe te voegen.
 Er is een back-up gemaakt van het vorige user_presets.xml-bestand.</value>
   </data>
   <data name="Main_QueueFinished" xml:space="preserve">
@@ -303,8 +303,8 @@ Er is een back-up gemaakt van het vorige user_presets.xml-bestand.</value>
     <value>Voorinstelling versie</value>
   </data>
   <data name="Preset_OldVersion_Message" xml:space="preserve">
-    <value>De voorinstelling die u probeert te importeren, is van een andere versie van HandBrake. 
-Mogelijk kunnen niet om alle waarden uit deze voorinstelling worden geïmporteerd. 
+    <value>De voorinstelling die u probeert te importeren, is van een andere versie van HandBrake.
+Mogelijk kunnen niet om alle waarden uit deze voorinstelling worden geïmporteerd.
 
 Doorgaan?</value>
   </data>
@@ -342,7 +342,7 @@ Doorgaan?</value>
     <value>Kan de geselecteerde voorinstelling niet importeren.</value>
   </data>
   <data name="Main_PresetImportFailedSolution" xml:space="preserve">
-    <value>De voorinstelling kan beschadigd zijn of afkomstig van een niet-ondersteunde oudere versie van HandBrake. 
+    <value>De voorinstelling kan beschadigd zijn of afkomstig van een niet-ondersteunde oudere versie van HandBrake.
 Voorinstellingen van oudere versies moeten in de huidige versie opnieuw worden aangemaakt.</value>
   </data>
   <data name="Video_EncoderExtraArgsTooltip" xml:space="preserve">
@@ -350,7 +350,7 @@ Voorinstellingen van oudere versies moeten in de huidige versie opnieuw worden a
   </data>
   <data name="Subtitles_BurnInBehaviourModes" xml:space="preserve">
     <value>Geen - Alleen sporen waarvan het formaat door de container niet wordt ondersteund, worden ingebrand.
-Buitenlands audiospoor - Indien beschikbaar, wordt het buitenlands audiospoor ingebrand. 
+Buitenlands audiospoor - Indien beschikbaar, wordt het buitenlands audiospoor ingebrand.
 Eerste spoor - Het eerste audiospoor wordt ingebrand.
 Voorkeur buitenlandse audio, anders eerste - Indien een buitenlands audiospoor bestaat, wordt deze ingebrand, anders wordt de eerste spoor gekozen.</value>
   </data>
@@ -368,11 +368,11 @@ Als u doorgaat, gaan niet-ingebrande ondertitels verloren.</value>
     <value>Geen geldige bron of titels gevonden.</value>
   </data>
   <data name="Main_ScanNoTitlesFoundMessage" xml:space="preserve">
-    <value>HandBrake kan de geselecteerde bron niet coderen omdat het geen geldige bron met titels heeft gevonden om te coderen. Dit kan te wijten zijn aan een van de volgende redenen: 
+    <value>HandBrake kan de geselecteerde bron niet coderen omdat het geen geldige bron met titels heeft gevonden om te coderen. Dit kan te wijten zijn aan een van de volgende redenen:
 
-- De duur van elke brontitel is onder de drempeloptie "Minimale titelduur" in 'Voorkeuren&gt; Geavanceerd'. 
+- De duur van elke brontitel is onder de drempeloptie "Minimale titelduur" in 'Voorkeuren&gt; Geavanceerd'.
 - Het bronbestand is geen geldig videobestand of heeft een formaat dat HandBrake niet ondersteunt.
-- Mogelijk is er geen leestoegang tot het bestand of houdt een andere applicatie het bestand vergrendeld. 
+- Mogelijk is er geen leestoegang tot het bestand of houdt een andere applicatie het bestand vergrendeld.
 - De bron kan tegen kopiëren zijn beveiligd of DRM bevatten. HandBrake bevat geen ondersteuning het verwijderen van kopieerbeveiligingen.
 
 Het activiteitenlogboek kan nadere informatie bevatten.</value>
@@ -554,7 +554,7 @@ Weet u zeker dat u HandBrake wilt afsluiten?</value>
     <value>Voorinstellingen niet geladen.</value>
   </data>
   <data name="PresetService_UnableToLoadPresets" xml:space="preserve">
-    <value>HandBrake kon het bestand met de voorinstellingen niet laden. Het kan zijn dat deze afkomstig is van een oudere niet-ondersteunde versie van HandBrake of het is beschadigd. 
+    <value>HandBrake kon het bestand met de voorinstellingen niet laden. Het kan zijn dat deze afkomstig is van een oudere niet-ondersteunde versie van HandBrake of het is beschadigd.
 
 Het bestand met de oude voorinstellingen is gearchiveerd naar:</value>
   </data>
@@ -589,13 +589,13 @@ Het bestand met de oude voorinstellingen is gearchiveerd naar:</value>
     <value>Ongeldige hoofdstukinformatie voor bronmedia</value>
   </data>
   <data name="ChaptersViewModel_ValidateImportedChapters_ChapterCountMismatch" xml:space="preserve">
-    <value>Het aantal hoofdstukken op de bronmedia 
+    <value>Het aantal hoofdstukken op de bronmedia
 en het aantal hoofdstukken in het invoerbestand komt niet overeen ({0} t.o. {1}).
 
 Doorgaan met importeren van hoofdstuknamen?</value>
   </data>
   <data name="ChaptersViewModel_ValidateImportedChapters_ChapterCountMismatchMsg" xml:space="preserve">
-    <value>Het aantal hoofdstukken op de bronmedia 
+    <value>Het aantal hoofdstukken op de bronmedia
 en het aantal hoofdstukken in het invoerbestand komt niet overeen ({0} t.o. {1}).
 
 Doorgaan met importeren van hoofdstuknamen?</value>
@@ -604,7 +604,7 @@ Doorgaan met importeren van hoofdstuknamen?</value>
     <value>Aantal hoofdstukken in bron- en invoerbestand komt niet overeen</value>
   </data>
   <data name="ChaptersViewModel_ValidateImportedChapters_ChapterDurationMismatchMsg" xml:space="preserve">
-    <value>De gegeven duur van de hoofdstukken op de bronmedia 
+    <value>De gegeven duur van de hoofdstukken op de bronmedia
 en de duur van hoofdstukken in het invoerbestand verschillen sterk.
 
 Het lijkt erop dat dit hoofdstukbestand is geproduceerd uit andere bronmedia.
@@ -678,9 +678,9 @@ Het bestand met voorinstellingen wordt gearchiveerd en er wordt een nieuw bestan
     <value>Wachtrij gepauzeerd</value>
   </data>
   <data name="Main_LowDiskspace" xml:space="preserve">
-    <value>Uw doelmap heeft weinig schijfruimte. 
+    <value>Uw doelmap heeft weinig schijfruimte.
 
-U kunt het niveau waarop deze waarschuwing wordt weergegeven configureren in de voorkeuren. 
+U kunt het niveau waarop deze waarschuwing wordt weergegeven configureren in de voorkeuren.
 
 Wilt u doorgaan? </value>
   </data>
@@ -1639,6 +1639,12 @@ VLC en MPC-HC worden ondersteund. Andere mediaspelers werken mogelijk ook, maar 
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Gem. bitsnelheid (kbps):</value>
   </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Doelgrootte (MB):</value>
+  </data>
+  <data name="VideoView_TargetSizeTooltip" xml:space="preserve">
+    <value>Stel de doelbestandsgrootte in megabytes in. De encoder berekent de juiste bitsnelheid om ongeveer deze bestandsgrootte te bereiken.</value>
+  </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Video-encoder:</value>
   </data>
@@ -1861,7 +1867,7 @@ Dit heeft geen invloed op de software-encoders.</value>
     <value>Portable modus: niet in staat om portable.ini te lezen. Mogelijk is er een fout opgetreden in dit bestand. Probeer het opnieuw met portable.ini.template als richtlijn.</value>
   </data>
   <data name="OptionsView_FormatOptions" xml:space="preserve">
-    <value>Vervangingsopties: 
+    <value>Vervangingsopties:
 U kunt de bovenstaande tekst slepen/neerzetten of invoeren.</value>
   </data>
   <data name="FileOverwriteBehaviours_Ask" xml:space="preserve">
@@ -2143,7 +2149,7 @@ Waar ondersteund, worden alle gebruikersvoorinstellingen geïmporteerd.</value>
     <value>Alle resterende gesloten ondertitels toevoegen</value>
   </data>
   <data name="QueueService_DuplicatesQuestion" xml:space="preserve">
-    <value>In het wachtrijbestand dat u probeert te importeren zijn dubbele taken gedetecteerd. Wilt u de bestaande items overschrijven? 
+    <value>In het wachtrijbestand dat u probeert te importeren zijn dubbele taken gedetecteerd. Wilt u de bestaande items overschrijven?
 Dit stopt ook alle lopende taken.</value>
   </data>
   <data name="QueueService_DuplicatesTitle" xml:space="preserve">
@@ -2426,7 +2432,7 @@ Kies een andere voorinstelling.</value>
   <data name="MainViewModel_FilePathSelectError" xml:space="preserve">
     <value>Er is een fout opgetreden in de bestandsvenster.
 
-- Let op, lange bestandspaden worden niet volledig ondersteund. Houd bestandspaden korter dan 255 tekens. 
+- Let op, lange bestandspaden worden niet volledig ondersteund. Houd bestandspaden korter dan 255 tekens.
 - De laatst gebruikte map voor dit venster is hersteld om fouten te voorkomen als u de volgende keer een bestand probeert te scannen.</value>
   </data>
   <data name="PictureSettingsView_MaxHeight" xml:space="preserve">
@@ -2453,8 +2459,8 @@ U kunt uw keuze op elk moment wijzigen door de opties in Voorkeuren -&gt; Algeme
     <value>Controleren op updates?</value>
   </data>
   <data name="OptionsViewModel_UpdateNotice" xml:space="preserve">
-    <value>Voor het bijwerken: 
-- Controleer of dat er geen lopende coderingen in de wachtrij staan. 
+    <value>Voor het bijwerken:
+- Controleer of dat er geen lopende coderingen in de wachtrij staan.
 - Maak een back-up of noteer aangepaste voorinstellingen die u eventueel hebt gemaakt, omdat deze mogelijk niet volledig compatibel zijn met nieuwere versies.</value>
   </data>
   <data name="Preset_Default" xml:space="preserve">
@@ -2536,7 +2542,7 @@ U kunt uw keuze op elk moment wijzigen door de opties in Voorkeuren -&gt; Algeme
     <value>Kan het wachtrijbestand niet lezen.</value>
   </data>
   <data name="QueueViewModel_ImportFailSolution" xml:space="preserve">
-    <value>Het bestand kan beschadigd zijn of van een eerdere versie van HandBrake. 
+    <value>Het bestand kan beschadigd zijn of van een eerdere versie van HandBrake.
 Alleen wachtrijbestanden van de huidige versie worden ondersteund.</value>
   </data>
   <data name="Notifications_EncodeDone" xml:space="preserve">
@@ -2613,7 +2619,7 @@ Alleen wachtrijbestanden van de huidige versie worden ondersteund.</value>
   </data>
   <data name="Startup_UnableToStartInfo" xml:space="preserve">
     <value>Ondersteuning voor hardwarecodering is uitgeschakeld omdat dit een veelvoorkomende oorzaak is van opstartproblemen.
-- Probeer HandBrake opnieuw op te starten. 
+- Probeer HandBrake opnieuw op te starten.
 - Als het probleem aanhoudt, kan het een verouderde grafische kaartdriver zijn (hardware) die het probleem veroorzaakt.
 
 Ondersteuning voor hardwarecodering kan opnieuw worden ingeschakeld in voorkeuren.</value>
@@ -2643,7 +2649,7 @@ Ondersteuning voor hardwarecodering kan opnieuw worden ingeschakeld in voorkeure
     <value>Info</value>
   </data>
   <data name="SubtitleView_NoSubtitlesAdded" xml:space="preserve">
-    <value>Er zijn geen ondertitelsporen toegevoegd. 
+    <value>Er zijn geen ondertitelsporen toegevoegd.
 
 Dit kan te wijten zijn aan beperkingen van de geselecteerde bestandscontainer. Zie onze documentatie over ondertiteling voor meer informatie.</value>
   </data>
@@ -2672,7 +2678,7 @@ Dit kan te wijten zijn aan beperkingen van de geselecteerde bestandscontainer. Z
     <value>Hardware-ondersteuning</value>
   </data>
   <data name="StaticPreviewViewModel_MediaError" xml:space="preserve">
-    <value>Het systeem kon dit bestand niet afspelen. 
+    <value>Het systeem kon dit bestand niet afspelen.
 
 Let op: voor bepaalde codecs zoals AV1 of HEVC moeten de Microsoft AV1- of HEVC-codec-plug-ins van de Microsoft Store worden geïnstalleerd.
 U kunt hieronder ook "Externe mediaspeler gebruiken" selecteren.</value>

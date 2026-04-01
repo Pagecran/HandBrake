@@ -253,12 +253,11 @@ namespace HandBrakeWPF
         {
             if (Portable.IsPortable() && !Portable.IsUpdateCheckEnabled())
             {
-                return; // If Portable Mode has disabled it, don't bother the user. Just accept it's disabled. 
+                return; // If Portable Mode has disabled it, don't bother the user. Just accept it's disabled.
             }
 
-            MessageBoxResult result = MessageBox.Show(HandBrakeWPF.Properties.Resources.FirstRun_EnableUpdateCheck, HandBrakeWPF.Properties.Resources.FirstRun_EnableUpdateCheckHeader, MessageBoxButton.YesNo, MessageBoxImage.Question);
-            // Be explicit setting it to true/false as it may have been turned on during first-run.
-            userSettingService.SetUserSetting(UserSettingConstants.UpdateStatus, result == MessageBoxResult.Yes);
+            // Force disable update checks by default - no user prompt
+            userSettingService.SetUserSetting(UserSettingConstants.UpdateStatus, false);
         }
 
         private void CurrentDomain_ProcessExit(object sender, System.EventArgs e)

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Video_EncoderExtraArgs" xml:space="preserve">
-    <value>인코더 파라미터의 전체 목록: 
+    <value>인코더 파라미터의 전체 목록:
 {0}</value>
   </data>
   <data name="Video_x264FastDecode" xml:space="preserve">
@@ -130,7 +130,7 @@
     <value>경고: RF 0은 무손실입니다!</value>
   </data>
   <data name="Video_LosslessWarningTooltip" xml:space="preserve">
-    <value>원본 파일이 또한 손실되지 않는 한, 0의 값은 무손실을 의미하고 
+    <value>원본 파일이 또한 손실되지 않는 한, 0의 값은 무손실을 의미하고
 이 값은 원본보다 큰 파일 사이즈가 될 수 있습니다.
 
 x264와 x265의 규모는 대수이며 더 낮은 값은 더 높은 품질에 해당합니다.
@@ -1636,6 +1636,12 @@ VLC 및 MPC-HC가 지원됩니다. 다른 재생기들도 작업을 할 수 있�
   </data>
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>평균 비트전송률 (kbps):</value>
+  </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>목표 파일 크기 (MB):</value>
+  </data>
+  <data name="VideoView_TargetSizeTooltip" xml:space="preserve">
+    <value>목표 파일 크기를 메가바이트 단위로 설정합니다. 인코더는 이 파일 크기에 대략적으로 도달하기 위해 적절한 비트전송률을 계산합니다.</value>
   </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>비디오 인코더:</value>

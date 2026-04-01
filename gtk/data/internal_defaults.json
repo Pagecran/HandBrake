@@ -53,6 +53,8 @@
         "chapter_list": [],
         "vquality_type_bitrate": false,
         "vquality_type_constant": false,
+        "vquality_type_target_size": false,
+        "VideoTargetSize": 700,
         "ImportLanguage": "und",
         "SrtCodeset": "ISO-8859-1",
         "ImportFile": "",

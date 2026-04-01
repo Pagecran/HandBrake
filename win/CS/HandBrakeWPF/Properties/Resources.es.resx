@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Video_EncoderExtraArgs" xml:space="preserve">
-    <value>Lista completa de parámetros del codificador: 
+    <value>Lista completa de parámetros del codificador:
 {0}</value>
   </data>
   <data name="Video_x264FastDecode" xml:space="preserve">
@@ -350,19 +350,19 @@ Los preajustes de versiones anteriores deben volver a crearse en la versión act
     <value>Argumentos avanzados adicionales que se pueden pasar al codificador de vídeo. </value>
   </data>
   <data name="Subtitles_BurnInBehaviourModes" xml:space="preserve">
-    <value>Ninguno: solo se grabarán las pistas en las que el contenedor no admite el formato. 
+    <value>Ninguno: solo se grabarán las pistas en las que el contenedor no admite el formato.
  Pista de audio externo: la pista de audio externo se grabará si está disponible.
- Primera pista - Se grabara la primera pista. 
+ Primera pista - Se grabara la primera pista.
  Audio externo preferido, sino Primero - Si la pista de audio externo existe, se grabará, de lo contrario se elegirá la primera pista. </value>
   </data>
   <data name="Subtitles_WebmSubtitleIncompatibilityHeader" xml:space="preserve">
     <value>Compatibilidad de subtítulos WebM </value>
   </data>
   <data name="Subtitles_WebmSubtitleIncompatibilityError" xml:space="preserve">
-    <value>WebM en HandBrake solo admite subtítulos grabados. 
+    <value>WebM en HandBrake solo admite subtítulos grabados.
 
- Debe cambiar las selecciones de subtítulos. 
- 
+ Debe cambiar las selecciones de subtítulos.
+
  Si continúas, tus subtítulos no grabados se perderán.</value>
   </data>
   <data name="Main_ScanNoTitlesFound" xml:space="preserve">
@@ -554,7 +554,7 @@ No se eliminarán archivos codificados con esta operación.</value>
     <value>No se pueden cargar los preajustes.</value>
   </data>
   <data name="PresetService_UnableToLoadPresets" xml:space="preserve">
-    <value>HandBrake no pudo cargar su archivo de preajustes. Puede ser debido a una versión antigua no compatible de HandBrake o que el archivo este corrupto. 
+    <value>HandBrake no pudo cargar su archivo de preajustes. Puede ser debido a una versión antigua no compatible de HandBrake o que el archivo este corrupto.
 
  Su antiguo archivo de preajustes fue archivado en:</value>
   </data>
@@ -589,13 +589,13 @@ No se eliminarán archivos codificados con esta operación.</value>
     <value>Información de capítulo no válida para el medio de origen</value>
   </data>
   <data name="ChaptersViewModel_ValidateImportedChapters_ChapterCountMismatch" xml:space="preserve">
-    <value>El número de capítulos en el medio de origen 
+    <value>El número de capítulos en el medio de origen
     y el número de capítulos en el archivo de entrada no coincide ({0} vs {1}).
 
  Aún desea importar los nombres de capítulo?</value>
   </data>
   <data name="ChaptersViewModel_ValidateImportedChapters_ChapterCountMismatchMsg" xml:space="preserve">
-    <value>El número de capítulos en el medio de origen 
+    <value>El número de capítulos en el medio de origen
     y el número de capítulos en el archivo de entrada no coincide ({0} vs {1}).
 
  Aún desea importar los nombres de capítulo?</value>
@@ -606,7 +606,7 @@ No se eliminarán archivos codificados con esta operación.</value>
   <data name="ChaptersViewModel_ValidateImportedChapters_ChapterDurationMismatchMsg" xml:space="preserve">
     <value> La duración obtenida de los capítulos del medio original y la duración de los capítulos en el archivo de entrada difiere mucho.
 
-Es muy probable que este archivo de capítulo se haya producido a partir de un medio de origen diferente. 
+Es muy probable que este archivo de capítulo se haya producido a partir de un medio de origen diferente.
 
 Está seguro de que desea importar los nombres de capítulo?</value>
   </data>
@@ -645,7 +645,7 @@ Su archivo de preajuste se archivará y se creará uno nuevo. Tendrá que volver
     <value>Crear Directorio?</value>
   </data>
   <data name="DirectoryUtils_CreateFolderMsg" xml:space="preserve">
-    <value> La carpeta en la que está intentando escribir no existe. ¿Desea que HandBrake cree la siguiente carpeta? 
+    <value> La carpeta en la que está intentando escribir no existe. ¿Desea que HandBrake cree la siguiente carpeta?
 {0}</value>
   </data>
   <data name="MainViewModel_UnableToLaunchDestDir" xml:space="preserve">
@@ -1638,6 +1638,9 @@ VLC y MPC-HC son soportados. Otros reproductores pueden funcionar, aunque no han
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Bitrate promedio (kbps):</value>
   </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Tamaño objetivo (MB):</value>
+  </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Codificador de vídeo:</value>
   </data>
@@ -1913,7 +1916,7 @@ Puede arrastrar/soltar o introducir el texto anterior.</value>
     <value>Nota: No todos los codificadores de hardware tienen preferencias adicionales. Todos los codificadores de hardware disponibles y compatibles en este sistema estarán disponibles para su selección en la pestaña de vídeo en el menú desplegable de codificador de vídeo.</value>
   </data>
   <data name="Queue_RecoverQueueQuestionPlural" xml:space="preserve">
-    <value>HandBrake ha detectado varios archivos de cola inacabados. Estos son de varias instancias de HandBrake en ejecución. 
+    <value>HandBrake ha detectado varios archivos de cola inacabados. Estos son de varias instancias de HandBrake en ejecución.
 ¿Le gustaría recuperar todos los trabajos pendientes?</value>
   </data>
   <data name="Queue_RecoverQueueQuestionSingular" xml:space="preserve">
@@ -1923,7 +1926,7 @@ Puede arrastrar/soltar o introducir el texto anterior.</value>
     <value>Recuperación de cola posible</value>
   </data>
   <data name="PresetService_ImportingBuiltInWarning" xml:space="preserve">
-    <value>Su archivo de preajustes contiene preajustes integrados. La función de importación no admite la importación de estos. Use 'Menú de preajustes -&gt; Restablecer preajustes integrados' para restaurar los preajustes estándar. 
+    <value>Su archivo de preajustes contiene preajustes integrados. La función de importación no admite la importación de estos. Use 'Menú de preajustes -&gt; Restablecer preajustes integrados' para restaurar los preajustes estándar.
 
 Cuando se admita, se habrán importado los preajustes de usuario.</value>
   </data>
@@ -2425,9 +2428,9 @@ Por favor, elija un preajuste diferente.</value>
     <value>Tamaño de almacenamiento: {0}x{1}     Tamaño de visualización: {2}x{3}      Relación de aspecto: {4}</value>
   </data>
   <data name="MainViewModel_FilePathSelectError" xml:space="preserve">
-    <value>Se ha detectado un error en el diálogo del explorador de archivos. 
+    <value>Se ha detectado un error en el diálogo del explorador de archivos.
 
-- Por favor, tenga en cuenta que las rutas de archivo largas no son totalmente compatibles. Por favor, mantenga las rutas de los archivos con menos de 255 caracteres. 
+- Por favor, tenga en cuenta que las rutas de archivo largas no son totalmente compatibles. Por favor, mantenga las rutas de los archivos con menos de 255 caracteres.
 - El último directorio utilizado para esta ventana, se ha restablecido para evitar errores la próxima vez que intente escanear un archivo.</value>
   </data>
   <data name="PictureSettingsView_MaxHeight" xml:space="preserve">
@@ -2455,7 +2458,7 @@ Puede cambiar su elección en cualquier momento modificando las opciones en Pref
   </data>
   <data name="OptionsViewModel_UpdateNotice" xml:space="preserve">
     <value>Antes de actualizar:
-- Asegúrese de que no hay codificaciones pendientes en la cola. 
+- Asegúrese de que no hay codificaciones pendientes en la cola.
 - Haga una copia de seguridad o anote los preajustes personalizados que haya creado, ya que podrían no ser totalmente compatibles con las versiones más recientes.</value>
   </data>
   <data name="Preset_Default" xml:space="preserve">
@@ -2537,7 +2540,7 @@ Puede cambiar su elección en cualquier momento modificando las opciones en Pref
     <value>No se puede leer el archivo de cola.</value>
   </data>
   <data name="QueueViewModel_ImportFailSolution" xml:space="preserve">
-    <value>El archivo puede estar dañado o ser de una versión anterior de HandBrake. 
+    <value>El archivo puede estar dañado o ser de una versión anterior de HandBrake.
 Sólo se admiten archivos de cola de la versión actual.</value>
   </data>
   <data name="Notifications_EncodeDone" xml:space="preserve">
@@ -2614,7 +2617,7 @@ Sólo se admiten archivos de cola de la versión actual.</value>
   </data>
   <data name="Startup_UnableToStartInfo" xml:space="preserve">
     <value>El soporte de codificación de hardware ha sido desactivado ya que es una causa común de problemas de arranque.
-- Por favor, intente reiniciar HandBrake. 
+- Por favor, intente reiniciar HandBrake.
 - Si el problema persiste, es posible que el controlador de la tarjeta gráfica (integrada o discreta) no esté actualizado.
 
 La codificación por hardware se puede volver a activar en las preferencias.</value>
@@ -2644,7 +2647,7 @@ La codificación por hardware se puede volver a activar en las preferencias.</va
     <value>Información</value>
   </data>
   <data name="SubtitleView_NoSubtitlesAdded" xml:space="preserve">
-    <value>No se han añadido pistas de subtítulos. 
+    <value>No se han añadido pistas de subtítulos.
 
 Esto puede deberse a limitaciones del contenedor de archivos que ha seleccionado. Consulte nuestra documentación de ayuda sobre subtítulos para obtener más información.</value>
   </data>
@@ -2673,7 +2676,7 @@ Esto puede deberse a limitaciones del contenedor de archivos que ha seleccionado
     <value>Soporte de hardware</value>
   </data>
   <data name="StaticPreviewViewModel_MediaError" xml:space="preserve">
-    <value>El sistema no ha podido reproducir este archivo. 
+    <value>El sistema no ha podido reproducir este archivo.
 
 Tenga en cuenta que algunos códecs, como AV1 o HEVC, requieren los complementos de códec AV1 o HEVC de Microsoft Store para reproducirse.
 Como alternativa, marca la casilla «Usar reproductor externo» que aparece a continuación.</value>

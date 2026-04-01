@@ -8225,7 +8225,25 @@ namespace HandBrakeWPF.Properties {
                 return ResourceManager.GetString("VideoView_AverageBitrate", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Target Size (MB):.
+        /// </summary>
+        public static string VideoView_TargetSize {
+            get {
+                return ResourceManager.GetString("VideoView_TargetSize", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Set the target file size in megabytes. The encoder will calculate the appropriate bitrate to achieve approximately this file size..
+        /// </summary>
+        public static string VideoView_TargetSizeTooltip {
+            get {
+                return ResourceManager.GetString("VideoView_TargetSizeTooltip", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Video Encoder:.
         /// </summary>

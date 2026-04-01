@@ -275,7 +275,7 @@ namespace HandBrakeWPF.Services.Encode.Factories
                 video.Quality = (decimal?)job.Quality;
             }
 
-            if (job.VideoEncodeRateType == VideoEncodeRateType.AverageBitrate)
+            if (job.VideoEncodeRateType == VideoEncodeRateType.AverageBitrate || job.VideoEncodeRateType == VideoEncodeRateType.TargetSize)
             {
                 video.Bitrate = job.VideoBitrate;
             }

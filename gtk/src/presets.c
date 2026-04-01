@@ -344,7 +344,7 @@ ghb_preset_to_settings(GhbValue *settings, GhbValue *preset)
 
     vqtype = ghb_dict_get_int(settings, "VideoQualityType");
 
-    // VideoQualityType/0/1/2 - vquality_type_/target/bitrate/constant
+    // VideoQualityType/0/1/2/3 - vquality_type_/target/bitrate/constant/target_size
     // *note: target is no longer used
     switch (vqtype)
     {
@@ -352,21 +352,31 @@ ghb_preset_to_settings(GhbValue *settings, GhbValue *preset)
     {
         ghb_dict_set_bool(settings, "vquality_type_bitrate", TRUE);
         ghb_dict_set_bool(settings, "vquality_type_constant", FALSE);
+        ghb_dict_set_bool(settings, "vquality_type_target_size", FALSE);
     } break;
     case 1:
     {
         ghb_dict_set_bool(settings, "vquality_type_bitrate", TRUE);
         ghb_dict_set_bool(settings, "vquality_type_constant", FALSE);
+        ghb_dict_set_bool(settings, "vquality_type_target_size", FALSE);
     } break;
     case 2:
     {
         ghb_dict_set_bool(settings, "vquality_type_bitrate", FALSE);
         ghb_dict_set_bool(settings, "vquality_type_constant", TRUE);
+        ghb_dict_set_bool(settings, "vquality_type_target_size", FALSE);
+    } break;
+    case 3:
+    {
+        ghb_dict_set_bool(settings, "vquality_type_bitrate", FALSE);
+        ghb_dict_set_bool(settings, "vquality_type_constant", FALSE);
+        ghb_dict_set_bool(settings, "vquality_type_target_size", TRUE);
     } break;
     default:
     {
         ghb_dict_set_bool(settings, "vquality_type_bitrate", FALSE);
         ghb_dict_set_bool(settings, "vquality_type_constant", TRUE);
+        ghb_dict_set_bool(settings, "vquality_type_target_size", FALSE);
     } break;
     }
 
@@ -1766,13 +1776,14 @@ ghb_settings_to_preset(GhbValue *settings)
 {
     GhbValue *preset = ghb_value_dup(settings);
 
-    gboolean br, constant;
+    gboolean br, constant, target_size;
 
     ghb_dict_remove(preset, "title");
     ghb_dict_set_bool(preset, "Default", 0);
 
     br = ghb_dict_get_bool(preset, "vquality_type_bitrate");
     constant = ghb_dict_get_bool(preset, "vquality_type_constant");
+    target_size = ghb_dict_get_bool(preset, "vquality_type_target_size");
 
     const char * angle    = ghb_dict_get_string(preset, "rotate");
     int          hflip    = ghb_dict_get_int(preset, "hflip");
@@ -1806,7 +1817,7 @@ ghb_settings_to_preset(GhbValue *settings)
         ghb_dict_set_int(preset, "PictureCropMode", 2);
     }
 
-    // VideoQualityType/0/1/2 - vquality_type_/target/bitrate/constant
+    // VideoQualityType/0/1/2/3 - vquality_type_/target/bitrate/constant/target_size
     // *note: target is no longer used
     if (br)
     {
@@ -1815,6 +1826,10 @@ ghb_settings_to_preset(GhbValue *settings)
     else if (constant)
     {
         ghb_dict_set_int(preset, "VideoQualityType", 2);
+    }
+    else if (target_size)
+    {
+        ghb_dict_set_int(preset, "VideoQualityType", 3);
     }
 
     if (ghb_dict_get_bool(preset, "VideoFramerateCFR"))

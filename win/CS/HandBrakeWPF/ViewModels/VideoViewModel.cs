@@ -37,6 +37,7 @@ namespace HandBrakeWPF.ViewModels
     using VideoPreset = Services.Encode.Model.Models.Video.VideoPreset;
     using VideoProfile = Services.Encode.Model.Models.Video.VideoProfile;
     using VideoTune = Services.Encode.Model.Models.Video.VideoTune;
+    using Title = Services.Scan.Model.Title;
 
     public class VideoViewModel : ViewModelBase, IVideoViewModel
     {
@@ -56,14 +57,20 @@ namespace HandBrakeWPF.ViewModels
         private bool displayLevelControl;
         private bool displayProfileControl;
         private Dictionary<string, string> encoderOptions = new Dictionary<string, string>();
+        private Title currentTitle;
+        private Func<TimeSpan> getDurationCallback;
 
         public VideoViewModel(IUserSettingService userSettingService, IErrorService errorService)
         {
-            this.Task = new EncodeTask { VideoEncoder = HandBrakeEncoderHelpers.VideoEncoders.First(s => s.IsX264) };
+            this.Task = new EncodeTask {
+                VideoEncoder = HandBrakeEncoderHelpers.VideoEncoders.First(s => s.IsX264),
+                TargetFileSize = 700.0, // 700 MB par défaut
+                VideoEncodeRateType = VideoEncodeRateType.AverageBitrate,
+                VideoBitrate = 1000
+            };
             this.userSettingService = userSettingService;
             this.QualityMin = 0;
             this.QualityMax = 51;
-            this.IsConstantQuantity = true;
             this.VideoEncoders = new BindingList<HBVideoEncoder>(HandBrakeEncoderHelpers.VideoEncoders.ToList());
 
             this.VideoProfiles = new BindingList<VideoProfile>();
@@ -116,12 +123,10 @@ namespace HandBrakeWPF.ViewModels
                     this.VideoBitrate = null;
                     this.NotifyOfPropertyChange(() => this.Task);
                 }
-                else
-                {
-                    this.Task.VideoEncodeRateType = VideoEncodeRateType.AverageBitrate;
-                }
 
                 this.NotifyOfPropertyChange(() => this.IsConstantQuantity);
+                this.NotifyOfPropertyChange(() => this.IsTargetSize);
+                this.NotifyOfPropertyChange(() => this.IsAverageBitrate);
                 this.NotifyOfPropertyChange(() => this.IsMultiPassEnabled);
                 this.OnTabStatusChanged(null);
             }
@@ -131,7 +136,9 @@ namespace HandBrakeWPF.ViewModels
         {
             get
             {
-                return this.SelectedVideoEncoder.SupportsMultiPass(this.IsConstantQuantity);
+                // Multi-pass est disponible pour les modes bitrate (Average Bitrate et Target Size), pas pour Constant Quality
+                bool isBitrateMode = this.IsAverageBitrate || this.IsTargetSize;
+                return this.SelectedVideoEncoder.SupportsMultiPass(!isBitrateMode);
             }
         }
 
@@ -230,6 +237,85 @@ namespace HandBrakeWPF.ViewModels
                 this.OnTabStatusChanged(new TabStatusEventArgs("filters", ChangedOption.Bitrate));
             }
         }
+
+        public double? TargetFileSize
+        {
+            get => this.Task.TargetFileSize;
+            set
+            {
+                if (value == this.Task.TargetFileSize)
+                {
+                    return;
+                }
+
+                this.Task.TargetFileSize = value;
+                this.NotifyOfPropertyChange(() => this.TargetFileSize);
+                this.NotifyOfPropertyChange(() => this.TargetFileSizeKB);
+                this.CalculateBitrateFromTargetSize();
+                this.OnTabStatusChanged(new TabStatusEventArgs("filters", ChangedOption.Bitrate));
+            }
+        }
+
+        public int? TargetFileSizeKB
+        {
+            get => this.Task.TargetFileSize.HasValue ? (int?)(this.Task.TargetFileSize.Value * 1024) : null;
+            set
+            {
+                double? newValueMB = value.HasValue ? value.Value / 1024.0 : null;
+                if (newValueMB == this.Task.TargetFileSize)
+                {
+                    return;
+                }
+
+                this.Task.TargetFileSize = newValueMB;
+                this.NotifyOfPropertyChange(() => this.TargetFileSize);
+                this.NotifyOfPropertyChange(() => this.TargetFileSizeKB);
+                this.CalculateBitrateFromTargetSize();
+                this.OnTabStatusChanged(new TabStatusEventArgs("filters", ChangedOption.Bitrate));
+            }
+        }
+
+        public bool IsTargetSize
+        {
+            get => this.Task.VideoEncodeRateType == VideoEncodeRateType.TargetSize;
+            set
+            {
+                if (value)
+                {
+                    this.Task.VideoEncodeRateType = VideoEncodeRateType.TargetSize;
+                    this.VideoBitrate = null;
+                    this.CalculateBitrateFromTargetSize();
+                    this.NotifyOfPropertyChange(() => this.Task);
+                }
+
+                this.NotifyOfPropertyChange(() => this.IsTargetSize);
+                this.NotifyOfPropertyChange(() => this.IsConstantQuantity);
+                this.NotifyOfPropertyChange(() => this.IsAverageBitrate);
+                this.NotifyOfPropertyChange(() => this.IsMultiPassEnabled);
+                this.OnTabStatusChanged(null);
+            }
+        }
+
+        public bool IsAverageBitrate
+        {
+            get => this.Task.VideoEncodeRateType == VideoEncodeRateType.AverageBitrate;
+            set
+            {
+                if (value)
+                {
+                    this.Task.VideoEncodeRateType = VideoEncodeRateType.AverageBitrate;
+                    this.NotifyOfPropertyChange(() => this.Task);
+                }
+
+                this.NotifyOfPropertyChange(() => this.IsTargetSize);
+                this.NotifyOfPropertyChange(() => this.IsConstantQuantity);
+                this.NotifyOfPropertyChange(() => this.IsAverageBitrate);
+                this.NotifyOfPropertyChange(() => this.IsMultiPassEnabled);
+                this.OnTabStatusChanged(null);
+            }
+        }
+
+
 
         public double DisplayRF
         {
@@ -591,6 +677,24 @@ namespace HandBrakeWPF.ViewModels
         public void SetSource(Source source, Title title, Preset preset, EncodeTask task)
         {
             this.Task = task;
+            this.currentTitle = title;
+
+            // If target size mode is selected, recalculate bitrate with new title
+            if (this.IsTargetSize)
+            {
+                this.CalculateBitrateFromTargetSize();
+            }
+        }
+
+        public void SetDurationCallback(Func<TimeSpan> durationCallback)
+        {
+            this.getDurationCallback = durationCallback;
+
+            // If target size mode is selected, recalculate bitrate with new duration
+            if (this.IsTargetSize)
+            {
+                this.CalculateBitrateFromTargetSize();
+            }
         }
 
         public void SetPreset(Preset preset, EncodeTask task)
@@ -605,6 +709,7 @@ namespace HandBrakeWPF.ViewModels
             this.SelectedFramerate = preset.Task.Framerate.HasValue ? preset.Task.Framerate.Value.ToString(CultureInfo.InvariantCulture) : SameAsSource;
 
             this.IsConstantQuantity = preset.Task.VideoEncodeRateType == VideoEncodeRateType.ConstantQuality;
+            this.IsTargetSize = preset.Task.VideoEncodeRateType == VideoEncodeRateType.TargetSize;
 
             switch (preset.Task.FramerateMode)
             {
@@ -624,7 +729,8 @@ namespace HandBrakeWPF.ViewModels
             this.MultiPass = preset.Task.MultiPass;
             this.TurboAnalysisPass = preset.Task.TurboAnalysisPass;
 
-            this.VideoBitrate = preset.Task.VideoEncodeRateType == VideoEncodeRateType.AverageBitrate ? preset.Task.VideoBitrate : null;
+            this.VideoBitrate = preset.Task.VideoEncodeRateType == VideoEncodeRateType.AverageBitrate || preset.Task.VideoEncodeRateType == VideoEncodeRateType.TargetSize ? preset.Task.VideoBitrate : null;
+            // TargetFileSizeText se met à jour automatiquement via le getter
 
             this.NotifyOfPropertyChange(() => this.Task);
 
@@ -675,6 +781,7 @@ namespace HandBrakeWPF.ViewModels
 
             this.NotifyOfPropertyChange(() => this.IsConstantFramerate);
             this.NotifyOfPropertyChange(() => this.IsConstantQuantity);
+            this.NotifyOfPropertyChange(() => this.IsTargetSize);
             this.NotifyOfPropertyChange(() => this.IsPeakFramerate);
             this.NotifyOfPropertyChange(() => this.IsVariableFramerate);
             this.NotifyOfPropertyChange(() => this.SelectedVideoEncoder);
@@ -684,6 +791,8 @@ namespace HandBrakeWPF.ViewModels
             this.NotifyOfPropertyChange(() => this.RF);
             this.NotifyOfPropertyChange(() => this.DisplayRF);
             this.NotifyOfPropertyChange(() => this.VideoBitrate);
+            this.NotifyOfPropertyChange(() => this.TargetFileSize);
+            this.NotifyOfPropertyChange(() => this.TargetFileSizeKB);
             this.NotifyOfPropertyChange(() => this.Task.Quality);
             this.NotifyOfPropertyChange(() => this.Task.MultiPass);
             this.NotifyOfPropertyChange(() => this.Task.TurboAnalysisPass);
@@ -728,6 +837,28 @@ namespace HandBrakeWPF.ViewModels
 
             if (preset.Task.VideoEncodeRateType == VideoEncodeRateType.AverageBitrate)
             {
+                if (preset.Task.VideoBitrate != this.Task.VideoBitrate)
+                {
+                    return false;
+                }
+
+                if (preset.Task.MultiPass != this.Task.MultiPass)
+                {
+                    return false;
+                }
+
+                if (preset.Task.TurboAnalysisPass != this.Task.TurboAnalysisPass)
+                {
+                    return false;
+                }
+            }
+            else if (preset.Task.VideoEncodeRateType == VideoEncodeRateType.TargetSize)
+            {
+                if (preset.Task.TargetFileSize != this.Task.TargetFileSize)
+                {
+                    return false;
+                }
+
                 if (preset.Task.VideoBitrate != this.Task.VideoBitrate)
                 {
                     return false;
@@ -1122,6 +1253,60 @@ namespace HandBrakeWPF.ViewModels
             // Load the cached arguments. Saves the user from resetting when switching encoders.
             string result;
             this.ExtraArguments = this.encoderOptions.TryGetValue(selectedEncoder?.ShortName, out result) ? result : string.Empty;
+        }
+
+        public void CalculateBitrateFromTargetSize()
+        {
+            if (!this.IsTargetSize || !this.Task.TargetFileSize.HasValue)
+            {
+                return;
+            }
+
+            double targetSizeMB = this.Task.TargetFileSize.Value;
+
+            // Get duration from callback if available, otherwise use title duration, otherwise fallback
+            int durationSeconds;
+            if (this.getDurationCallback != null)
+            {
+                TimeSpan duration = this.getDurationCallback();
+                durationSeconds = (int)duration.TotalSeconds;
+            }
+            else if (this.currentTitle != null)
+            {
+                durationSeconds = (int)this.currentTitle.Duration.TotalSeconds;
+            }
+            else
+            {
+                durationSeconds = 7200; // 2 hours fallback
+            }
+
+            // Calculate bitrate from target file size
+            int calculatedBitrate = CalculateBitrateFromTargetFileSize(targetSizeMB, durationSeconds, 0);
+
+            // Update the video bitrate
+            this.VideoBitrate = calculatedBitrate;
+        }
+
+        private static int CalculateBitrateFromTargetFileSize(double targetSizeMB, int durationSeconds, int audioBitrateKbps)
+        {
+            if (durationSeconds <= 0 || targetSizeMB <= 0)
+            {
+                return 1000; // Default fallback bitrate
+            }
+
+            // Simple formula: target size (KB) × 8 ÷ duration (seconds) = bitrate (kbps)
+            // Convert MB to KB: × 1024
+            double targetSizeKB = targetSizeMB * 1024;
+            double bitrateKbps = (targetSizeKB * 8) / durationSeconds;
+
+            // Round to nearest integer and ensure minimum bitrate
+            int finalBitrate = (int)Math.Round(bitrateKbps);
+            if (finalBitrate < 100)
+            {
+                finalBitrate = 100;
+            }
+
+            return finalBitrate;
         }
 
         private void HandleRFChange()

@@ -232,6 +232,11 @@ namespace HandBrakeWPF.Controls
         public bool UpdateBindingOnTextChange { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether to allow comma as decimal separator.
+        /// </summary>
+        public bool AllowCommaDecimalSeparator { get; set; }
+
+        /// <summary>
         /// Gets the increment.
         /// </summary>
         private double Increment
@@ -537,7 +542,8 @@ namespace HandBrakeWPF.Controls
         /// </param>
         private void NumberBoxPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (e.Text.Any(c => !char.IsNumber(c) && c != '.' && (this.Minimum >= 0 || c != '-')))
+            bool allowComma = this.AllowCommaDecimalSeparator;
+            if (e.Text.Any(c => !char.IsNumber(c) && c != '.' && (!allowComma || c != ',') && (this.Minimum >= 0 || c != '-')))
             {
                 e.Handled = true;
             }

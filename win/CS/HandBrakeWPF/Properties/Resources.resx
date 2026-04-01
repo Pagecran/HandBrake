@@ -1638,6 +1638,12 @@ VLC and MPC-HC are supported. Other players may also work but are not validated.
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Avg Bitrate (kbps):</value>
   </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Target Size (MB):</value>
+  </data>
+  <data name="VideoView_TargetSizeTooltip" xml:space="preserve">
+    <value>Set the target file size in megabytes. The encoder will calculate the appropriate bitrate to achieve approximately this file size.</value>
+  </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Video Encoder:</value>
   </data>

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -147,8 +147,8 @@ Niestandardowe: opcjonalnie możesz ustawić maksymalną szerokość i wysokoś�
 Maksimum źródła: Zawsze koduj z rozdzielczością źródła, jeśli to możliwe.</value>
   </data>
   <data name="About_GPL" xml:space="preserve">
-    <value>Ten program jest wolnym oprogramowaniem; możesz go redystrybuować 
-i/lub modyfikować go zgodnie z warunkami Powszechnej Licencji Publicznej 
+    <value>Ten program jest wolnym oprogramowaniem; możesz go redystrybuować
+i/lub modyfikować go zgodnie z warunkami Powszechnej Licencji Publicznej
 GNU opublikowane przez Free Software Foundation; albo wersja 2
 Licencji lub (według Twojego wyboru) dowolnej późniejszej wersji.
 
@@ -342,7 +342,7 @@ Czy chcesz kontynuować?</value>
     <value>Nie można zaimportować wybranego ustawienia wstępnego.</value>
   </data>
   <data name="Main_PresetImportFailedSolution" xml:space="preserve">
-    <value>Ustawienie wstępne może być uszkodzone lub pochodzić ze starszej wersji hamulca ręcznego, która nie jest obsługiwana. 
+    <value>Ustawienie wstępne może być uszkodzone lub pochodzić ze starszej wersji hamulca ręcznego, która nie jest obsługiwana.
 Presety ze starszych wersji muszą zostać odtworzone w bieżącej wersji.</value>
   </data>
   <data name="Video_EncoderExtraArgsTooltip" xml:space="preserve">
@@ -589,13 +589,13 @@ Twój stary plik ustawień wstępnych został zarchiwizowany do:</value>
     <value>Nieprawidłowe informacje o rozdziale dla nośnika źródłowego</value>
   </data>
   <data name="ChaptersViewModel_ValidateImportedChapters_ChapterCountMismatch" xml:space="preserve">
-    <value>Liczba rozdziałów na nośnikach źródłowych 
+    <value>Liczba rozdziałów na nośnikach źródłowych
 a liczba rozdziałów w pliku wejściowym nie zgadza się ({0} vs {1}).
 
 Czy nadal chcesz importować nazwy rozdziałów?</value>
   </data>
   <data name="ChaptersViewModel_ValidateImportedChapters_ChapterCountMismatchMsg" xml:space="preserve">
-    <value>Liczba rozdziałów na nośnikach źródłowych 
+    <value>Liczba rozdziałów na nośnikach źródłowych
 a liczba rozdziałów w pliku wejściowym nie zgadza się ({0} vs {1}).
 
 Czy nadal chcesz importować nazwy rozdziałów?</value>
@@ -1639,6 +1639,12 @@ Obsługiwane przez VLC i MPC-HC. Inni gracze również mogą działać, ale nie 
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Średnia szybkość transmisji (kb/s):</value>
   </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Rozmiar docelowy (MB):</value>
+  </data>
+  <data name="VideoView_TargetSizeTooltip" xml:space="preserve">
+    <value>Ustaw docelowy rozmiar pliku w megabajtach. Koder obliczy odpowiednią szybkość transmisji, aby osiągnąć w przybliżeniu ten rozmiar pliku.</value>
+  </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Koder wideo:</value>
   </data>
@@ -2671,7 +2677,7 @@ Może to wynikać z ograniczeń wybranego kontenera plików. Więcej informacji 
     <value>Wsparcie sprzętowe</value>
   </data>
   <data name="StaticPreviewViewModel_MediaError" xml:space="preserve">
-    <value>System nie mógł odtworzyć tego pliku. 
+    <value>System nie mógł odtworzyć tego pliku.
 
 Należy pamiętać, że niektóre kodeki, takie jak AV1 lub HEVC, wymagają do odtwarzania wtyczek kodeków Microsoft AV1 lub HEVC ze sklepu Microsoft Store.
 Alternatywnie, zaznacz pole wyboru „Użyj zewnętrznego odtwarzacza” poniżej.</value>

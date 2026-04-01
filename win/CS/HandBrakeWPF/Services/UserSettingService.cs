@@ -292,7 +292,7 @@ namespace HandBrakeWPF.Services
             defaults.Add(UserSettingConstants.RightToLeftUi, 0); 
             
             // Output Files
-            defaults.Add(UserSettingConstants.AutoNaming, true);
+            defaults.Add(UserSettingConstants.AutoNaming, false);  // Désactivé par défaut
             defaults.Add(UserSettingConstants.AutoNamePath, string.Empty);
             defaults.Add(UserSettingConstants.AutoNameFormat, "{source}");
             defaults.Add(UserSettingConstants.AutonameFilePrePostString, "output_");
@@ -300,7 +300,7 @@ namespace HandBrakeWPF.Services
             defaults.Add(UserSettingConstants.AutoNameRemoveUnderscore, true);
             defaults.Add(UserSettingConstants.AutonameFileCollisionBehaviour, 0);
             defaults.Add(UserSettingConstants.UseIsoDateFormat, false);
-            defaults.Add(UserSettingConstants.AlwaysUseDefaultPath, true);
+            defaults.Add(UserSettingConstants.AlwaysUseDefaultPath, false);  // Désactivé par défaut
             defaults.Add(UserSettingConstants.RemovePunctuation, false);
             defaults.Add(UserSettingConstants.FileOverwriteBehaviour, 0);
             defaults.Add(UserSettingConstants.UseM4v, 0);

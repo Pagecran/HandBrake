@@ -1209,6 +1209,13 @@ Resets the queue job to pending and ready to run again.</property>
     <property name="step-increment">10</property>
     <property name="page-increment">100</property>
   </object>
+  <object class="GtkAdjustment" id="adjustment_target_size">
+    <property name="lower">0.1</property>
+    <property name="upper">100000</property>
+    <property name="value">700</property>
+    <property name="step-increment">0.1</property>
+    <property name="page-increment">10</property>
+  </object>
   <object class="GtkAdjustment" id="adjustment30">
     <property name="lower">1</property>
     <property name="upper">65535</property>
@@ -3532,6 +3539,38 @@ to limit instantaneous bitrate, look into x264&apos;s vbv-bufsize and vbv-maxrat
                                   </object>
                                 </child>
                                 <child>
+                                  <object class="GtkCheckButton" id="vquality_type_target_size">
+                                    <property name="label" translatable="yes">Target Size (MB):</property>
+                                    <property name="tooltip-text" translatable="yes">Set the target file size in megabytes.
+
+The encoder will calculate the appropriate bitrate to achieve approximately this file size.
+The actual file size may vary slightly depending on the content complexity.</property>
+                                    <property name="halign">start</property>
+                                    <property name="group">vquality_type_constant</property>
+                                    <signal name="toggled" handler="vquality_type_changed_cb" swapped="no"/>
+                                    <layout>
+                                      <property name="row">3</property>
+                                      <property name="column">0</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkSpinButton" id="VideoTargetSize">
+                                    <property name="focusable">1</property>
+                                    <property name="tooltip-text" translatable="yes">Set the target file size in megabytes.
+
+The encoder will calculate the appropriate bitrate to achieve approximately this file size.
+The actual file size may vary slightly depending on the content complexity.</property>
+                                    <property name="adjustment">adjustment_target_size</property>
+                                    <property name="digits">1</property>
+                                    <signal name="value-changed" handler="vtarget_size_changed_cb" swapped="no"/>
+                                    <layout>
+                                      <property name="row">3</property>
+                                      <property name="column">1</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                                <child>
                                   <object class="GtkBox" id="VideoMultiPassBox">
                                     <property name="spacing">20</property>
                                     <child>
@@ -3558,7 +3597,7 @@ to make bitrate allocation decisions.</property>
                                       </object>
                                     </child>
                                     <layout>
-                                      <property name="row">3</property>
+                                      <property name="row">4</property>
                                       <property name="column">0</property>
                                       <property name="column-span">2</property>
                                     </layout>

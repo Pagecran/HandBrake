@@ -25,6 +25,15 @@ build/
 build.*/
 download/
 
+# Packaging scripts output
+HandBrake/
+HandBrake_*/
+HandBrake_temp/
+HandBrake_minimal_temp/
+HandBrake_compact_temp/
+HandBrake_Minimal/
+HandBrake_Compact/
+
 # Gtk
 gtk/ABOUT-NLS
 gtk/Makefile.in*

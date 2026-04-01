@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -304,7 +304,7 @@ O backup do arquivo 'user_presets.xml' anterior foi salvo.</value>
   </data>
   <data name="Preset_OldVersion_Message" xml:space="preserve">
     <value>O perfil que você está tentando importar é de uma versão do HandBrake diferente da atual.
- Pode não ser possível importar todos os valores deste perfil. 
+ Pode não ser possível importar todos os valores deste perfil.
 
 Você deseja continuar?</value>
   </data>
@@ -370,9 +370,9 @@ Se continuar, suas legendas não-fixadas serão perdidas.</value>
   <data name="Main_ScanNoTitlesFoundMessage" xml:space="preserve">
     <value>O HandBrake não conseguirá codificar a fonte selecionada, pois não encontrou uma fonte válida com títulos para codificar. Isso pode ser devido a um dos seguintes motivos:
 
-- A duração de cada título da fonte está abaixo da opção de limite "Duração mínima do título" em "Preferências &gt; Avançado". 
+- A duração de cada título da fonte está abaixo da opção de limite "Duração mínima do título" em "Preferências &gt; Avançado".
 - O arquivo de origem não é um arquivo de vídeo válido ou está num formato que o HandBrake não suporta.
-- Você pode não ter acesso de leitura ao arquivo ou outro aplicativo pode estar bloqueando o arquivo. 
+- Você pode não ter acesso de leitura ao arquivo ou outro aplicativo pode estar bloqueando o arquivo.
 - A fonte pode estar protegida contra cópia ou incluir DRM. Observe que o HandBrake não suporta a remoção de proteções contra cópia.
 
 O registro de atividades pode conter mais informações.</value>
@@ -1637,6 +1637,12 @@ O VLC e o MPC-HC também são compatíveis. Outros reprodutores de mídia també
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Taxa de Bits Média (kbps):</value>
   </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Tamanho alvo (MB):</value>
+  </data>
+  <data name="VideoView_TargetSizeTooltip" xml:space="preserve">
+    <value>Defina o tamanho do arquivo de destino em megabytes. O codificador calculará a taxa de bits apropriada para atingir aproximadamente este tamanho de arquivo.</value>
+  </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Codificador de vídeo:</value>
   </data>
@@ -2422,7 +2428,7 @@ Por favor, escolha uma predefinição diferente.</value>
     <value>Tamanho do armazenamento: {0}x{1}     Tamanho da tela: {2}x{3}      Proporção do aspecto: {4}</value>
   </data>
   <data name="MainViewModel_FilePathSelectError" xml:space="preserve">
-    <value>Um erro foi detectado no diálogo do navegador de arquivos. 
+    <value>Um erro foi detectado no diálogo do navegador de arquivos.
 
 - Observe que caminhos de arquivo longos não são totalmente compatíveis. Mantenha os caminhos do arquivo com menos de 255 caracteres.
 - O último diretório usado para esta janela foi reinicializada para evitar erros na próxima vez que você tentar escanear um arquivo.</value>
@@ -2452,7 +2458,7 @@ Você pode mudar a sua escolha a qualquer momento, alterando as opções em Pref
   </data>
   <data name="OptionsViewModel_UpdateNotice" xml:space="preserve">
     <value>Antes de atualizar:
-- Certifique-se de que não haja codificações pendentes na fila. 
+- Certifique-se de que não haja codificações pendentes na fila.
 - Faça o backup ou anote as predefinições personalizadas que você criou, pois elas podem não ser totalmente compatíveis com as versões mais recentes.</value>
   </data>
   <data name="Preset_Default" xml:space="preserve">
@@ -2534,7 +2540,7 @@ Você pode mudar a sua escolha a qualquer momento, alterando as opções em Pref
     <value>Não foi possível ler o arquivo da fila.</value>
   </data>
   <data name="QueueViewModel_ImportFailSolution" xml:space="preserve">
-    <value>O arquivo pode estar corrompido ou pode ser de uma versão anterior do HandBrake. 
+    <value>O arquivo pode estar corrompido ou pode ser de uma versão anterior do HandBrake.
 Somente os arquivos da versão atual de fila são compatíveis.</value>
   </data>
   <data name="Notifications_EncodeDone" xml:space="preserve">
@@ -2611,7 +2617,7 @@ Somente os arquivos da versão atual de fila são compatíveis.</value>
   </data>
   <data name="Startup_UnableToStartInfo" xml:space="preserve">
     <value>O suporte à codificação de hardware foi desativado, pois é uma causa comum de problemas de inicialização.
-- Tente reiniciar o HandBrake. 
+- Tente reiniciar o HandBrake.
 - Caso o problema persista, um driver de placa de vídeo pode estar desatualizado (onboard ou discreto) que está causando o problema.
 
 O suporte à codificação de hardware pode ser reativado nas preferências.</value>
@@ -2670,7 +2676,7 @@ Isso pode ser devido a limitações do contêiner de arquivo selecionado. Consul
     <value>Compatibilidade de hardware</value>
   </data>
   <data name="StaticPreviewViewModel_MediaError" xml:space="preserve">
-    <value>O sistema não conseguiu reproduzir este arquivo. 
+    <value>O sistema não conseguiu reproduzir este arquivo.
 
 Observe que determinados codecs, como AV1 ou HEVC, exigem os plug-ins de codec AV1 ou HEVC da Microsoft Store para que possam ser reproduzidos.
 Como alternativa, marque a caixa de seleção "Usar player externo" abaixo.</value>

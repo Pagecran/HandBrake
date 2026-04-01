@@ -1,11 +1,12 @@
 ﻿<UserControl x:Class="HandBrakeWPF.Views.VideoView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:HandBrakeWPF.Converters"
              xmlns:Video="clr-namespace:HandBrakeWPF.Converters.Video"
              xmlns:Properties="clr-namespace:HandBrakeWPF.Properties"
+             xmlns:controls="clr-namespace:HandBrakeWPF.Controls"
              mc:Ignorable="d" >
 
     <UserControl.Resources>
@@ -101,17 +102,26 @@
                 </Grid>
 
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,6" Visibility="{Binding IsBitrateSupported, Converter={StaticResource boolToVisConverter}}">
-                    <RadioButton Content="{x:Static Properties:Resources.VideoView_AverageBitrate}" ToolTip="{x:Static Properties:ResourcesTooltips.Video_AvgBitrate}" 
-                                 IsChecked="{Binding IsConstantQuantity, Converter={StaticResource boolConverter}, ConverterParameter=true}" Margin="0,0,10,0"/>
-                    <TextBox Width="75" Text="{Binding VideoBitrate, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding IsConstantQuantity, Converter={StaticResource boolConverter}, ConverterParameter=true}"
+                    <RadioButton Content="{x:Static Properties:Resources.VideoView_AverageBitrate}" ToolTip="{x:Static Properties:ResourcesTooltips.Video_AvgBitrate}"
+                                 IsChecked="{Binding IsAverageBitrate}" Margin="0,0,10,0"/>
+                    <TextBox Width="75" Text="{Binding VideoBitrate, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding IsAverageBitrate}"
                              ToolTip="{x:Static Properties:ResourcesTooltips.Video_AvgBitrate}" AutomationProperties.Name="{x:Static Properties:Resources.VideoView_AverageBitrate}"  />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,8,0,12" Visibility="{Binding IsBitrateSupported, Converter={StaticResource boolToVisConverter}}">
+                    <RadioButton Content="{x:Static Properties:Resources.VideoView_TargetSize}" ToolTip="{x:Static Properties:Resources.VideoView_TargetSizeTooltip}"
+                                 IsChecked="{Binding IsTargetSize}" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                    <controls:NumberBox Width="75" Number="{Binding TargetFileSize, Mode=TwoWay}" IsEnabled="{Binding IsTargetSize}"
+                                        ToolTip="{x:Static Properties:Resources.VideoView_TargetSizeTooltip}" AutomationProperties.Name="Target Size (MB)"
+                                        Minimum="0.1" Maximum="100000" AllowEmpty="False" UpdateBindingOnTextChange="True" VerticalAlignment="Center"
+                                        AllowCommaDecimalSeparator="True" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="25,0,0,0" Visibility="{Binding DisplayMultiPass, Converter={StaticResource boolToVisConverter}}">
                     <CheckBox Content="{x:Static Properties:Resources.VideoView_MultiPass}" IsEnabled="{Binding IsMultiPassEnabled, Converter={StaticResource boolConverter}}"
                               IsChecked="{Binding MultiPass}" Margin="0,0,10,0" ToolTip="{x:Static Properties:ResourcesTooltips.Video_MultiPass}"
                               Visibility="{Binding DisplayMultiPass, Converter={StaticResource boolToVisConverter}}"/>
-                    <CheckBox Content="{x:Static Properties:Resources.VideoView_TurboAnalysisPass}" IsEnabled="{Binding IsConstantQuantity, Converter={StaticResource boolConverter}, ConverterParameter=true}"
+                    <CheckBox Content="{x:Static Properties:Resources.VideoView_TurboAnalysisPass}" IsEnabled="{Binding IsMultiPassEnabled}"
                               IsChecked="{Binding TurboAnalysisPass}" Visibility="{Binding DisplayTurboAnalysisPass, Converter={StaticResource boolToVisConverter}}"
                               ToolTip="{x:Static Properties:ResourcesTooltips.Video_TurboAnalysisPass}" />
                 </StackPanel>

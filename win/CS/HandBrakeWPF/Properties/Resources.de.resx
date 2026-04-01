@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -138,9 +138,9 @@ Bei x264 und x265 ist die Skala logarithmisch und kleinere Werte bedeuten eine h
 Daher führen kleine Erhöhungen der Werte zu einer stark zunehmende Erhöhung der Dateigröße.</value>
   </data>
   <data name="AddPreset_PictureSizeMode" xml:space="preserve">
-    <value>Mit dieser Voreinstellung kann optional eine Bildeinstellung gespeichert werden. Es gibt 3 Modi: 
+    <value>Mit dieser Voreinstellung kann optional eine Bildeinstellung gespeichert werden. Es gibt 3 Modi:
 
-Keine: Die Bildeinstellungen werden nicht in der Voreinstellung gespeichert. Beim Laden einer Quelle bleiben sie innerhalb der Grenzen der Quellauflösung. Dies betrifft auch Anamorph, Modulus, Beschneidung usw. 
+Keine: Die Bildeinstellungen werden nicht in der Voreinstellung gespeichert. Beim Laden einer Quelle bleiben sie innerhalb der Grenzen der Quellauflösung. Dies betrifft auch Anamorph, Modulus, Beschneidung usw.
 
 Eigene: Es kann optional eine maximale Breite und Höhe eingestellt werden. Dabei ist eine Kodierung kleiner oder gleich diesen Werten. „Das Seitenverhältnis beibehalten“ wird automatisch angewendet.
 
@@ -151,13 +151,13 @@ Quellenmaximum: Kodiert nach Möglichkeit immer mit der Quellauflösung.</value>
 den Bedingungen der GNU General Public License, wie sie von
 der Free Software Foundation veröffentlicht wurde, weitergeben
 und/oder verändert werden; entweder Version 2 der Lizenz oder
-(nach eigener Wahl) jede spätere Version. 
+(nach eigener Wahl) jede spätere Version.
 
 Dieses Programm wird in der Hoffnung verteilt, dass es nützlich
 sein wird, aber OHNE JEGLICHE GEWÄHRLEISTUNG; auch ohne
 die stillschweigende Gewährleistung der MARKTREIFE oder
 Tauglichkeit für einen bestimmten Zweck. Weitere Informationen
-finden Sie in der GNU General Public License. 
+finden Sie in der GNU General Public License.
 
 Sie sollten eine Kopie der GNU General Public License
 zusammen mit diesem Programm erhalten haben; wenn
@@ -351,7 +351,7 @@ Voreinstellungen aus älteren Versionen müssen mit einer aktuellen Version neu 
   </data>
   <data name="Subtitles_BurnInBehaviourModes" xml:space="preserve">
     <value>Keine – Es werden nur Spuren eingebrannt, bei denen der Container das Format nicht unterstützt.
-Fremdsprachenspur – Die Fremdsprachenspur wird eingebrannt, falls vorhanden. 
+Fremdsprachenspur – Die Fremdsprachenspur wird eingebrannt, falls vorhanden.
 Erste Spur – Die erste Spur wird eingebrannt.
 Fremdsprachenton bevorzugt, sonst Erste – Wenn die Fremdsprachenspur existiert, wird sie eingebrannt, sonst wird die erste Spur ausgewählt.</value>
   </data>
@@ -371,9 +371,9 @@ Beim Fortfahren gehen nicht-eingebrannte Untertitel verloren.</value>
   <data name="Main_ScanNoTitlesFoundMessage" xml:space="preserve">
     <value>HandBrake ist nicht in der Lage, die ausgewählte Quelle zu kodieren, da es keine gültige Quelle mit zu kodierenden Titeln gefunden hat. Dies könnte an einem der folgenden Gründe liegen:
 
-- Die Dauer der einzelnen Quellentitel liegt unter der Schwellenwertoption "Minimale Titeldauer" in "Einstellungen &gt; Erweitert". 
+- Die Dauer der einzelnen Quellentitel liegt unter der Schwellenwertoption "Minimale Titeldauer" in "Einstellungen &gt; Erweitert".
 - Die Quelldatei ist keine gültige Videodatei oder hat ein Format, das HandBrake nicht unterstützt.
-- Sie haben möglicherweise keinen Lesezugriff auf die Datei oder eine andere Anwendung hat die Datei gesperrt. 
+- Sie haben möglicherweise keinen Lesezugriff auf die Datei oder eine andere Anwendung hat die Datei gesperrt.
 - Die Quelle kann kopiergeschützt sein oder DRM enthalten. Bitte beachten Sie, dass HandBrake das Entfernen von Kopierschutzmechanismen nicht unterstützt.
 
 Das Aktivitätsprotokoll kann weitere Informationen enthalten.</value>
@@ -1640,6 +1640,9 @@ Es werden VLC und MPC-HC unterstützt. Andere Media-Player können auch funktion
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Mittlere Bitrate (kbps):</value>
   </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Zielgröße (MB):</value>
+  </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Videoencoder:</value>
   </data>
@@ -1924,7 +1927,7 @@ Sie können den Text oben per Drag &amp; Drop ziehen oder eingeben.</value>
     <value>Wiederherstellung der Warteschlange möglich</value>
   </data>
   <data name="PresetService_ImportingBuiltInWarning" xml:space="preserve">
-    <value>Ihre Voreinstellungsdatei beinhaltete installierte Voreinstellungen. Die Importfunktion unterstützt einen Import dieser nicht. Bitte „Einstellungsmenü -&gt; Installierte Voreinstellungen zurücksetzen“ verwenden, um den Standard wieder herzustellen. 
+    <value>Ihre Voreinstellungsdatei beinhaltete installierte Voreinstellungen. Die Importfunktion unterstützt einen Import dieser nicht. Bitte „Einstellungsmenü -&gt; Installierte Voreinstellungen zurücksetzen“ verwenden, um den Standard wieder herzustellen.
 
 Falls unterstützt, wird jede benutzerdefinierte Voreinstellung übernommen. </value>
   </data>
@@ -2145,7 +2148,7 @@ Falls unterstützt, wird jede benutzerdefinierte Voreinstellung übernommen. </v
     <value>Alle restlichen CC-Untertitel hinzufügen</value>
   </data>
   <data name="QueueService_DuplicatesQuestion" xml:space="preserve">
-    <value>In der Warteschlangendatei, die Sie importieren möchten, wurden doppelte Aufgaben entdeckt. Möchten Sie die vorhandenen Datensätze überschreiben? 
+    <value>In der Warteschlangendatei, die Sie importieren möchten, wurden doppelte Aufgaben entdeckt. Möchten Sie die vorhandenen Datensätze überschreiben?
 Dadurch werden auch alle bereits laufenden Aufgaben gestoppt.</value>
   </data>
   <data name="QueueService_DuplicatesTitle" xml:space="preserve">
@@ -2426,9 +2429,9 @@ Bitte eine andere Voreinstellung auswählen.</value>
     <value>Originalgröße: {0}x{1}   Anzeigegröße: {2}x{3}     Bildformat: {4}</value>
   </data>
   <data name="MainViewModel_FilePathSelectError" xml:space="preserve">
-    <value>Im Dateibrowser-Dialog wurde ein Fehler festgestellt. 
+    <value>Im Dateibrowser-Dialog wurde ein Fehler festgestellt.
 
-- Bitte beachten Sie, dass lange Dateipfade nicht vollständig unterstützt werden. Bitte halten Sie Dateipfade kürzer als 255 Zeichen. 
+- Bitte beachten Sie, dass lange Dateipfade nicht vollständig unterstützt werden. Bitte halten Sie Dateipfade kürzer als 255 Zeichen.
 - Das zuletzt verwendete Verzeichnis für dieses Fenster, wurde zurückgesetzt, um Fehler zu vermeiden, wenn Sie das nächste Mal versuchen, eine Datei einzulesen.</value>
   </data>
   <data name="PictureSettingsView_MaxHeight" xml:space="preserve">
@@ -2538,7 +2541,7 @@ Dies kann jederzeit in den Einstellungen unter General -&gt; Auf Updates prüfen
     <value>Lesen der Warteschlangen-Datei fehlgeschlagen.</value>
   </data>
   <data name="QueueViewModel_ImportFailSolution" xml:space="preserve">
-    <value>Die Datei ist möglicherweise beschädigt oder stammt von einer früheren Version von HandBrake. 
+    <value>Die Datei ist möglicherweise beschädigt oder stammt von einer früheren Version von HandBrake.
 Es werden nur Warteschlangen-Dateien der aktuellen Version unterstützt.</value>
   </data>
   <data name="Notifications_EncodeDone" xml:space="preserve">
@@ -2615,7 +2618,7 @@ Es werden nur Warteschlangen-Dateien der aktuellen Version unterstützt.</value>
   </data>
   <data name="Startup_UnableToStartInfo" xml:space="preserve">
     <value>Die Unterstützung der Hardware-Kodierung wurde deaktiviert, da sie eine häufige Ursache für Startprobleme ist.
-- Bitte versuchen Sie, HandBrake neu zu starten. 
+- Bitte versuchen Sie, HandBrake neu zu starten.
 - Wenn das Problem weiterhin besteht, ist möglicherweise ein veralteter Grafikkartentreiber (onboard oder diskret) die Ursache des Problems.
 
 Die Unterstützung der Hardware-Kodierung kann in den Einstellungen wieder aktiviert werden. </value>
@@ -2674,7 +2677,7 @@ Dies kann auf Einschränkungen des von Ihnen gewählten Datei-Containers zurück
     <value>Hardware-Unterstützung</value>
   </data>
   <data name="StaticPreviewViewModel_MediaError" xml:space="preserve">
-    <value>Das System konnte diese Datei nicht abspielen. 
+    <value>Das System konnte diese Datei nicht abspielen.
 
 Bitte beachten Sie, dass für die Wiedergabe bestimmter Codecs wie AV1 oder HEVC die Microsoft AV1- oder HEVC-Codec-Plugins aus dem Microsoft Store erforderlich sind.
 Alternativ können Sie auch das Kontrollkästchen "Externen Abspieler verwenden" unten aktivieren.</value>

@@ -573,6 +573,12 @@ namespace HandBrakeWPF.ViewModels
                 this.NotifyOfPropertyChange(() => this.SelectedStartPoint);
                 this.Duration = this.DurationCalculation();
 
+                // Recalculate target size bitrate if needed
+                if (this.VideoViewModel.IsTargetSize)
+                {
+                    this.VideoViewModel.CalculateBitrateFromTargetSize();
+                }
+
                 TriggerAutonameChange(ChangedOption.Chapters);
 
                 if (this.SelectedStartPoint > this.SelectedEndPoint)
@@ -591,6 +597,12 @@ namespace HandBrakeWPF.ViewModels
                 this.CurrentTask.EndPoint = value;
                 this.NotifyOfPropertyChange(() => this.SelectedEndPoint);
                 this.Duration = this.DurationCalculation();
+
+                // Recalculate target size bitrate if needed
+                if (this.VideoViewModel.IsTargetSize)
+                {
+                    this.VideoViewModel.CalculateBitrateFromTargetSize();
+                }
 
                 TriggerAutonameChange(ChangedOption.Chapters);
 
@@ -657,6 +669,12 @@ namespace HandBrakeWPF.ViewModels
 
                     this.IsTimespanRange = false;
                     this.NotifyOfPropertyChange(() => this.IsTimespanRange);
+                }
+
+                // Recalculate target size bitrate if needed
+                if (this.VideoViewModel.IsTargetSize)
+                {
+                    this.VideoViewModel.CalculateBitrateFromTargetSize();
                 }
             }
         }
@@ -1602,7 +1620,7 @@ namespace HandBrakeWPF.ViewModels
                         {
                             this.StartScan(videoContent, 0);
                         }
-                    } 
+                    }
                     else if (videoContent.Count >= 1)
                     {
                         this.StartScan(videoContent, 0);
@@ -1632,9 +1650,9 @@ namespace HandBrakeWPF.ViewModels
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                Filter = "mp4|*.mp4;*.m4v|mkv|*.mkv|webm|*.webm", 
-                CheckPathExists = true, 
-                AddExtension = true, 
+                Filter = "mp4|*.mp4;*.m4v|mkv|*.mkv|webm|*.webm",
+                CheckPathExists = true,
+                AddExtension = true,
                 DefaultExt = ".mp4",
                 RestoreDirectory = true
             };
@@ -2127,6 +2145,10 @@ namespace HandBrakeWPF.ViewModels
                 this.isSettingPreset = true;
                 this.PictureSettingsViewModel.SetSource(this.ScannedSource, this.SelectedTitle, this.selectedPreset, this.CurrentTask);
                 this.VideoViewModel.SetSource(this.ScannedSource, this.SelectedTitle, this.selectedPreset, this.CurrentTask);
+
+                // Setup duration callback for target size calculation
+                this.VideoViewModel.SetDurationCallback(() => this.GetSelectedDuration());
+
                 this.FiltersViewModel.SetSource(this.ScannedSource, this.SelectedTitle, this.selectedPreset, this.CurrentTask);
                 this.AudioViewModel.SetSource(this.ScannedSource, this.SelectedTitle, this.selectedPreset, this.CurrentTask);
                 this.SubtitleViewModel.SetSource(this.ScannedSource, this.SelectedTitle, this.selectedPreset, this.CurrentTask);
@@ -2308,6 +2330,29 @@ namespace HandBrakeWPF.ViewModels
             }
 
             return "--:--:--";
+        }
+
+        private TimeSpan GetSelectedDuration()
+        {
+            if (this.selectedTitle == null)
+            {
+                return TimeSpan.Zero;
+            }
+
+            double startEndDuration = this.SelectedEndPoint - this.SelectedStartPoint;
+
+            switch (this.SelectedPointToPoint)
+            {
+                case PointToPointMode.Chapters:
+                    return this.SelectedTitle.CalculateDuration(this.SelectedStartPoint, this.SelectedEndPoint);
+                case PointToPointMode.Seconds:
+                    return TimeSpan.FromSeconds(startEndDuration);
+                case PointToPointMode.Frames:
+                    startEndDuration = startEndDuration / selectedTitle.Fps;
+                    return TimeSpan.FromSeconds(Math.Round(startEndDuration, 2));
+                default:
+                    return this.selectedTitle.Duration;
+            }
         }
 
         private void HandleUpdateCheckResults(UpdateCheckInformation information)

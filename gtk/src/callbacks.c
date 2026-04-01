@@ -426,6 +426,8 @@ static GhbBinding widget_bindings[] =
     {"vquality_type_constant", "active", NULL, "VideoQualitySlider", "sensitive"},
     {"vquality_type_constant", "sensitive", NULL, "VideoQualitySlider", "sensitive"},
     {"vquality_type_constant", "active", NULL, "video_quality_label", "sensitive"},
+    {"vquality_type_target_size", "active", NULL, "VideoTargetSize", "sensitive"},
+    {"vquality_type_target_size", "sensitive", NULL, "VideoTargetSize", "sensitive"},
     {"VideoFramerate", "active-id", "auto", "VideoFrameratePFR", "visible", TRUE},
     {"VideoFramerate", "active-id", "auto", "VideoFramerateVFR", "visible"},
     {"VideoMultiPass", "active", NULL, "VideoTurboMultiPass", "sensitive"},
@@ -2716,6 +2718,11 @@ ghb_set_title_settings(signal_user_data_t *ud, GhbValue *settings)
     ghb_subtitle_set_pref_lang(settings);
     if (title != NULL)
     {
+        // Update bitrate if target size mode is selected
+        signal_user_data_t temp_ud = *ud;
+        temp_ud.settings = settings;
+        ghb_update_target_size_bitrate(&temp_ud);
+
         GhbValue * job_dict, * title_dict;
         char     * label;
 
@@ -2999,6 +3006,9 @@ ptop_widget_changed_cb (GtkWidget *widget, gpointer data)
         spin_configure(ud, "start_point", 1, 1, max_frames * 2);
         spin_configure(ud, "end_point", max_frames, 1, max_frames * 2);
     }
+
+    // Update bitrate if target size mode is selected
+    ghb_update_target_size_bitrate(ud);
 }
 
 G_MODULE_EXPORT void
@@ -3298,6 +3308,13 @@ vquality_type_changed_cb (GtkWidget *widget, gpointer data)
 
     ghb_widget_to_setting(ud->settings, widget);
     ghb_update_multipass(ud);
+
+    // If target size mode is selected, calculate and update bitrate
+    if (ghb_dict_get_bool(ud->settings, "vquality_type_target_size"))
+    {
+        ghb_update_target_size_bitrate(ud);
+    }
+
     ghb_clear_presets_selection(ud);
     ghb_live_reset(ud);
     if (ghb_check_name_template(ud, "{quality}") ||
@@ -3311,6 +3328,19 @@ vbitrate_changed_cb (GtkWidget *widget, gpointer data)
     signal_user_data_t *ud = ghb_ud();
 
     ghb_widget_to_setting(ud->settings, widget);
+    ghb_clear_presets_selection(ud);
+    ghb_live_reset(ud);
+    if (ghb_check_name_template(ud, "{bitrate}"))
+        ghb_set_destination(ud);
+}
+
+G_MODULE_EXPORT void
+vtarget_size_changed_cb (GtkWidget *widget, gpointer data)
+{
+    signal_user_data_t *ud = ghb_ud();
+
+    ghb_widget_to_setting(ud->settings, widget);
+    ghb_update_target_size_bitrate(ud);
     ghb_clear_presets_selection(ud);
     ghb_live_reset(ud);
     if (ghb_check_name_template(ud, "{bitrate}"))
@@ -3530,18 +3560,26 @@ G_MODULE_EXPORT void
 start_point_changed_cb (GtkWidget *widget, gpointer data)
 {
     double new_val = 0.0;
+    signal_user_data_t *ud = ghb_ud();
 
     ptop_read_value_cb(widget, &new_val, data);
     ptop_update_bg(PTOP_START, new_val, data);
+
+    // Update bitrate if target size mode is selected
+    ghb_update_target_size_bitrate(ud);
 }
 
 G_MODULE_EXPORT void
 end_point_changed_cb (GtkWidget *widget, gpointer data)
 {
     double new_val = 0.0;
+    signal_user_data_t *ud = ghb_ud();
 
     ptop_read_value_cb(widget, &new_val, data);
     ptop_update_bg(PTOP_END, new_val, data);
+
+    // Update bitrate if target size mode is selected
+    ghb_update_target_size_bitrate(ud);
 }
 
 /*

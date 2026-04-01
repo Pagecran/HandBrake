@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -149,7 +149,7 @@ Source maximum : Encodez toujours à la résolution des sources lorsque cela es
   <data name="About_GPL" xml:space="preserve">
     <value>Ce programme est un logiciel libre; vous pouvez le redistribuer et / ou le
 modifier selon les termes de la Licence Publique Générale GNU tel que
-publié par la Free Software Foundation; soit la version 2 de la licence, 
+publié par la Free Software Foundation; soit la version 2 de la licence,
 ou (à votre choix) toute version ultérieure.
 
 Ce programme est distribué dans l’espoir qu’il sera utile,
@@ -677,9 +677,9 @@ Encodage 1 tâche</value>
     <value>File mise en Pause</value>
   </data>
   <data name="Main_LowDiskspace" xml:space="preserve">
-    <value>Votre répertoire de destination manque d'espace disque. 
+    <value>Votre répertoire de destination manque d'espace disque.
 
-Vous pouvez configurer le niveau auquel cette alerte apparaît dans les préférences. 
+Vous pouvez configurer le niveau auquel cette alerte apparaît dans les préférences.
 
 Souhaitez-vous continuer ?</value>
   </data>
@@ -1638,6 +1638,12 @@ VLC et MPC-HC sont pris en charge. D'autres lecteurs peuvent également fonction
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Débit moyen (kbps) :</value>
   </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Taille cible (Mo) :</value>
+  </data>
+  <data name="VideoView_TargetSizeTooltip" xml:space="preserve">
+    <value>Définir la taille cible du fichier en mégaoctets. L'encodeur calculera le débit approprié pour atteindre approximativement cette taille de fichier.</value>
+  </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Encodeur vidéo :</value>
   </data>
@@ -2424,9 +2430,9 @@ Veuillez choisir un autre préréglage.</value>
     <value>Taille de stockage : {0}x{1}     Taille d'affichage : {2}x{3}      Proportions : {4}</value>
   </data>
   <data name="MainViewModel_FilePathSelectError" xml:space="preserve">
-    <value>Une erreur a été détectée dans la boîte de dialogue du navigateur de fichiers. 
+    <value>Une erreur a été détectée dans la boîte de dialogue du navigateur de fichiers.
 
-- Veuillez noter que les longs chemins de fichier ne sont pas entièrement pris en charge. Les chemins d'accès aux fichiers doivent être inférieurs à 255 caractères. 
+- Veuillez noter que les longs chemins de fichier ne sont pas entièrement pris en charge. Les chemins d'accès aux fichiers doivent être inférieurs à 255 caractères.
 - Le dernier répertoire utilisé pour cette fenêtre a été réinitialisé afin d'éviter les erreurs la prochaine fois que vous essaierez d'analyser un fichier.</value>
   </data>
   <data name="PictureSettingsView_MaxHeight" xml:space="preserve">

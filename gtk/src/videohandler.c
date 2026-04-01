@@ -26,6 +26,7 @@
 #include "preview.h"
 
 #include <string.h>
+#include <math.h>
 
 int ghb_get_video_encoder(GhbValue *settings)
 {
@@ -64,17 +65,81 @@ int ghb_set_video_preset(GhbValue *settings, int encoder, const char * preset)
     return result;
 }
 
+// Calculate bitrate from target file size in MB and duration in seconds
+static int
+calculate_bitrate_from_target_size(double target_size_mb, int duration_seconds, int audio_bitrate_kbps)
+{
+    if (duration_seconds <= 0 || target_size_mb <= 0)
+        return 1000; // Default fallback bitrate
+
+    // Simple formula: target size (MB) × 8 ÷ duration (seconds) = total bitrate (Mbps)
+    // Convert to kbps: × 1000
+    // Convert MB to KB: × 1024
+    double target_size_kb = (double)target_size_mb * 1024;
+    double bitrate_kbps = (target_size_kb * 8) / duration_seconds;
+
+    // Round to nearest integer and ensure minimum bitrate
+    int final_bitrate = (int)(bitrate_kbps + 0.5);
+    if (final_bitrate < 100)
+        final_bitrate = 100;
+
+    return final_bitrate;
+}
+
+// Update video bitrate based on target file size
+void
+ghb_update_target_size_bitrate(signal_user_data_t *ud)
+{
+    if (!ghb_dict_get_bool(ud->settings, "vquality_type_target_size"))
+        return;
+
+    // Get title and duration
+    int title_id = ghb_dict_get_int(ud->settings, "title");
+    const hb_title_t *title = ghb_lookup_title(title_id, NULL);
+    if (title == NULL)
+        return;
+
+    // Calculate duration in seconds (using the same logic as in callbacks.c)
+    gint64 duration_90k;
+    if (ghb_settings_combo_int(ud->settings, "PtoPType") == 0)
+    {
+        gint start = ghb_dict_get_int(ud->settings, "start_point");
+        gint end = ghb_dict_get_int(ud->settings, "end_point");
+        duration_90k = ghb_chapter_range_get_duration(title, start, end);
+    }
+    else if (ghb_settings_combo_int(ud->settings, "PtoPType") == 1)
+    {
+        gint start = ghb_dict_get_int(ud->settings, "start_point");
+        gint end = ghb_dict_get_int(ud->settings, "end_point");
+        duration_90k = (end - start) * 90000;
+    }
+    else
+    {
+        duration_90k = title->duration;
+    }
+
+    int duration_seconds = (int)(duration_90k / 90000);
+
+    // Get target size
+    double target_size_mb = ghb_dict_get_double(ud->settings, "VideoTargetSize");
+
+    // Calculate bitrate from target file size
+    int calculated_bitrate = calculate_bitrate_from_target_size(target_size_mb, duration_seconds, 0);
+    ghb_dict_set_int(ud->settings, "VideoAvgBitrate", calculated_bitrate);
+    ghb_ui_update("VideoAvgBitrate", ghb_int_value(calculated_bitrate));
+}
+
 void
 ghb_update_multipass(signal_user_data_t *ud)
 {
     GtkWidget *multi_pass = ghb_builder_widget("VideoMultiPassBox");
     GtkWidget *turbo_multi_pass = ghb_builder_widget("VideoTurboMultiPass");
     int encoder = ghb_get_video_encoder(ud->settings);
-    
+
     gboolean constant_quality = ghb_dict_get_bool(ud->settings, "vquality_type_constant");
     gboolean supports_multi_pass = hb_video_multipass_is_supported(encoder, constant_quality);
     gboolean turbo_supported = (encoder & HB_VCODEC_X264_MASK) || (encoder & HB_VCODEC_X265_MASK);
-    
+
     gtk_widget_set_sensitive(multi_pass, supports_multi_pass);
     gtk_widget_set_visible(turbo_multi_pass, turbo_supported);
 }
@@ -131,13 +196,19 @@ vcodec_changed_cb (GtkWidget *widget, gpointer data)
     // update quality type
     GtkWidget *cqRadioButton = ghb_builder_widget("vquality_type_constant");
     GtkWidget *abrRadioButton = ghb_builder_widget("vquality_type_bitrate");
+    GtkWidget *tsRadioButton = ghb_builder_widget("vquality_type_target_size");
     gtk_widget_set_sensitive(cqRadioButton, hb_video_quality_is_supported(encoder));
     gtk_widget_set_sensitive(abrRadioButton, hb_video_bitrate_is_supported(encoder));
+    gtk_widget_set_sensitive(tsRadioButton, hb_video_bitrate_is_supported(encoder));
     if (ghb_widget_boolean(cqRadioButton) && ! hb_video_quality_is_supported(encoder))
     {
         ghb_update_widget(abrRadioButton, ghb_boolean_value(true));
     }
     if (ghb_widget_boolean(abrRadioButton) && ! hb_video_bitrate_is_supported(encoder))
+    {
+        ghb_update_widget(cqRadioButton, ghb_boolean_value(true));
+    }
+    if (ghb_widget_boolean(tsRadioButton) && ! hb_video_bitrate_is_supported(encoder))
     {
         ghb_update_widget(cqRadioButton, ghb_boolean_value(true));
     }

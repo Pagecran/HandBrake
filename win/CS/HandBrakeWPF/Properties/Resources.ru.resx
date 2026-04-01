@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Video_EncoderExtraArgs" xml:space="preserve">
-    <value>Полный список параметров кодировщика: 
+    <value>Полный список параметров кодировщика:
 {0}</value>
   </data>
   <data name="Video_x264FastDecode" xml:space="preserve">
@@ -139,7 +139,7 @@
 размера выходного фала. </value>
   </data>
   <data name="AddPreset_PictureSizeMode" xml:space="preserve">
-    <value>При желании вы можете сохранить настройки изображения с этим шаблоном. Есть 3 режима: 
+    <value>При желании вы можете сохранить настройки изображения с этим шаблоном. Есть 3 режима:
 
 None: настройки изображения не сохраняются в шаблоне. При загрузке из исходного файла они останутся как есть, в пределах исходного разрешения. Это также влияет на анаморфность, модуль, обрезку и т. д.
 
@@ -371,9 +371,9 @@ Foreign Audio Preferred, else First - Если существует дорожк
   <data name="Main_ScanNoTitlesFoundMessage" xml:space="preserve">
     <value>HandBrake will not be able to encode the selected source as it did not find a valid source with titles to encode. This could be due to one of the following reasons:
 
-- The duration of each source title is below the "Minimum Title Duration" threshold option in 'Preferences &gt; Advanced'. 
+- The duration of each source title is below the "Minimum Title Duration" threshold option in 'Preferences &gt; Advanced'.
 - The source file is not a valid video file or is in a format that HandBrake does not support.
-- You may not have read access to the file or another application may have a lock on the file. 
+- You may not have read access to the file or another application may have a lock on the file.
 - The source may be copy protected or include DRM. Please note that HandBrake does not support the removal of copy protections.
 
 The Activity log may have further information.</value>
@@ -679,9 +679,9 @@ Encoding 1 Job</value>
     <value>Очередь приостановлена</value>
   </data>
   <data name="Main_LowDiskspace" xml:space="preserve">
-    <value>В целевом каталоге недостаточно дискового пространства. 
+    <value>В целевом каталоге недостаточно дискового пространства.
 
-Вы можете настроить объём памяти, при котором будет появляться это предупреждение. 
+Вы можете настроить объём памяти, при котором будет появляться это предупреждение.
 
 Вы хотите продолжить?</value>
   </data>
@@ -1640,6 +1640,12 @@ VLC and MPC-HC are supported. Other players may also work but are not validated.
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Сред. битрейт (кбит/с):</value>
   </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Целевой размер (МБ):</value>
+  </data>
+  <data name="VideoView_TargetSizeTooltip" xml:space="preserve">
+    <value>Установите целевой размер файла в мегабайтах. Кодировщик рассчитает подходящий битрейт для достижения приблизительно этого размера файла.</value>
+  </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Видеокодировщик:</value>
   </data>
@@ -2424,9 +2430,9 @@ You can drag/drop or enter the text above.</value>
     <value>Storage Size: {0}x{1}     Display Size: {2}x{3}      Aspect Ratio: {4}</value>
   </data>
   <data name="MainViewModel_FilePathSelectError" xml:space="preserve">
-    <value>An error was detected in the File Browser Dialog. 
+    <value>An error was detected in the File Browser Dialog.
 
-- Please note, long file paths are not fully supported. Please keep file paths shorter than 255 characters. 
+- Please note, long file paths are not fully supported. Please keep file paths shorter than 255 characters.
 - The last used directory for this window, has been reset to prevent errors the next time you try to scan a file.</value>
   </data>
   <data name="PictureSettingsView_MaxHeight" xml:space="preserve">
@@ -2454,7 +2460,7 @@ You can change your choice at any time by changing the options in Preferences -&
   </data>
   <data name="OptionsViewModel_UpdateNotice" xml:space="preserve">
     <value>Before Updating:
-- Make sure there are no pending encodes in the queue. 
+- Make sure there are no pending encodes in the queue.
 - Backup or make a note of any custom presets you have created as they may not be fully compatible with newer versions.</value>
   </data>
   <data name="Preset_Default" xml:space="preserve">
@@ -2536,7 +2542,7 @@ You can change your choice at any time by changing the options in Preferences -&
     <value>Unable to read the queue file.</value>
   </data>
   <data name="QueueViewModel_ImportFailSolution" xml:space="preserve">
-    <value>The file may be corrupted or from an earlier version of HandBrake. 
+    <value>The file may be corrupted or from an earlier version of HandBrake.
 Only queue files from the current version are supported.</value>
   </data>
   <data name="Notifications_EncodeDone" xml:space="preserve">
@@ -2613,7 +2619,7 @@ Only queue files from the current version are supported.</value>
   </data>
   <data name="Startup_UnableToStartInfo" xml:space="preserve">
     <value>Hardware encoding support has been disabled as it is a common cause of start-up issues.
-- Please try restarting HandBrake. 
+- Please try restarting HandBrake.
 - If the problem persists, it may be an out-of-date graphics card driver (onboard or discrete) that is causing the problem.
 
 Hardware encoding support can be re-enabled in preferences. </value>
@@ -2672,7 +2678,7 @@ Hardware encoding support can be re-enabled in preferences. </value>
     <value>Аппаратная поддержка</value>
   </data>
   <data name="StaticPreviewViewModel_MediaError" xml:space="preserve">
-    <value>Система не смогла воспроизвести этот файл. 
+    <value>Система не смогла воспроизвести этот файл.
 
 Обратите внимание, что для воспроизведения некоторых кодеков, таких как AV1 или HEVC, требуются плагины кодеков Microsoft AV1 или HEVC из магазина Microsoft Store.
 В качестве альтернативы установите флажок "Использовать внешний проигрыватель" ниже.</value>

@@ -294,6 +294,8 @@ namespace HandBrakeWPF.Services.Encode.Model
 
         public int? VideoBitrate { get; set; }
 
+        public double? TargetFileSize { get; set; }
+
         public bool MultiPass { get; set; }
 
         public bool TurboAnalysisPass { get; set; }

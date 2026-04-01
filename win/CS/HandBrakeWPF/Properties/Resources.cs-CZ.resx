@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -1626,6 +1626,12 @@ VLC a MPC-HC jsou podporovány. Ostatní přehrávače fungují možná také, a
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Průměrný bitový tok (kbps)</value>
   </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Cílová velikost (MB):</value>
+  </data>
+  <data name="VideoView_TargetSizeTooltip" xml:space="preserve">
+    <value>Nastavte cílovou velikost souboru v megabajtech. Kodér vypočítá vhodný bitový tok pro dosažení přibližně této velikosti souboru.</value>
+  </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Video Konvertor:</value>
   </data>
@@ -1833,7 +1839,7 @@ Tohle neovlivní žádné jiné softwaré konvertory.</value>
     <value>Importovat Frontu</value>
   </data>
   <data name="QueueViewModel_EncodeStatusChanged_StatusLabel" xml:space="preserve">
-    <value>Konverze: Hotovo {0} z {1}, {2:00.00}%, FPS: {3:000.0}, Prům. FPS: {4:000.0} 
+    <value>Konverze: Hotovo {0} z {1}, {2:00.00}%, FPS: {3:000.0}, Prům. FPS: {4:000.0}
 Zbývající Čas: {5}, Uběhlo: {6}{7}</value>
   </data>
   <data name="QueueView_DeleteSelected" xml:space="preserve">
@@ -2131,7 +2137,7 @@ Where supported, any user presets will have been imported.</value>
     <value>Přidat všechny zbývající skryté titulky</value>
   </data>
   <data name="QueueService_DuplicatesQuestion" xml:space="preserve">
-    <value>Duplicate jobs were detected in the queue file that you are trying to import. Do you wish to overwrite the existing records? 
+    <value>Duplicate jobs were detected in the queue file that you are trying to import. Do you wish to overwrite the existing records?
 This will also stop any existing running jobs.</value>
   </data>
   <data name="QueueService_DuplicatesTitle" xml:space="preserve">
@@ -2442,7 +2448,7 @@ You can change your choice at any time by changing the options in Preferences -&
   </data>
   <data name="OptionsViewModel_UpdateNotice" xml:space="preserve">
     <value>Before Updating:
-- Make sure there are no pending encodes in the queue. 
+- Make sure there are no pending encodes in the queue.
 - Backup or make a note of any custom presets you have created as they may not be fully compatible with newer versions.</value>
   </data>
   <data name="Preset_Default" xml:space="preserve">
@@ -2524,7 +2530,7 @@ You can change your choice at any time by changing the options in Preferences -&
     <value>Unable to read the queue file.</value>
   </data>
   <data name="QueueViewModel_ImportFailSolution" xml:space="preserve">
-    <value>The file may be corrupted or from an earlier version of HandBrake. 
+    <value>The file may be corrupted or from an earlier version of HandBrake.
 Only queue files from the current version are supported.</value>
   </data>
   <data name="Notifications_EncodeDone" xml:space="preserve">
@@ -2601,7 +2607,7 @@ Only queue files from the current version are supported.</value>
   </data>
   <data name="Startup_UnableToStartInfo" xml:space="preserve">
     <value>Hardware encoding support has been disabled as it is a common cause of start-up issues.
-- Please try restarting HandBrake. 
+- Please try restarting HandBrake.
 - If the problem persists, it may be an out-of-date graphics card driver (onboard or discrete) that is causing the problem.
 
 Hardware encoding support can be re-enabled in preferences. </value>
@@ -2631,7 +2637,7 @@ Hardware encoding support can be re-enabled in preferences. </value>
     <value>Info</value>
   </data>
   <data name="SubtitleView_NoSubtitlesAdded" xml:space="preserve">
-    <value>There were no subtitle tracks added. 
+    <value>There were no subtitle tracks added.
 
 This may be due to limitations of the file container you have selected. Please see our subtitle help documentation for more information.</value>
   </data>
@@ -2660,7 +2666,7 @@ This may be due to limitations of the file container you have selected. Please s
     <value>Hardware Support</value>
   </data>
   <data name="StaticPreviewViewModel_MediaError" xml:space="preserve">
-    <value>The system was unable to play this file. 
+    <value>The system was unable to play this file.
 
 Please note certain codecs such as AV1 or HEVC require the Microsoft AV1 or HEVC codec plugins from the Microsoft Store to play.
 Alternatively, check the "Use External Player" checkbox below.</value>

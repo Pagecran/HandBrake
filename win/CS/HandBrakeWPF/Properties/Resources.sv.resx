@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Video_EncoderExtraArgs" xml:space="preserve">
-    <value>Fullständig lista över enkodningsparametrar: 
+    <value>Fullständig lista över enkodningsparametrar:
 {0}</value>
   </data>
   <data name="Video_x264FastDecode" xml:space="preserve">
@@ -146,19 +146,19 @@ Anpassad: Du kan valfritt ange en Maximal bredd och Höjd. När detta görs komm
 Maximal källa: Enkoda alltid med källans upplösning där möjligt.</value>
   </data>
   <data name="About_GPL" xml:space="preserve">
-    <value>Detta program är fri programvara; du kan dela ut det och/eller 
-ändra den under villkoren i GNU General Public License enligt 
-Free Software Foundation; antingen version 2 Licensen, eller 
-(efter eget val) någon senare version. 
+    <value>Detta program är fri programvara; du kan dela ut det och/eller
+ändra den under villkoren i GNU General Public License enligt
+Free Software Foundation; antingen version 2 Licensen, eller
+(efter eget val) någon senare version.
 
-Detta program distribueras i hopp om att det kommer att vara 
-användbart, men utan någon garanti, utan ens den underförstådda 
-garantin för HANDLIGHET eller lämplighet för ett särskilt ändamål. 
-Se även GNU General Public License för mer information. 
+Detta program distribueras i hopp om att det kommer att vara
+användbart, men utan någon garanti, utan ens den underförstådda
+garantin för HANDLIGHET eller lämplighet för ett särskilt ändamål.
+Se även GNU General Public License för mer information.
 
-Du borde ha fått en kopia av GNU General Public License 
-tillsammans med detta program; om inte, skriv till 
-Free Software Foundation, Inc., 51 Franklin Street, fFifth Floor, 
+Du borde ha fått en kopia av GNU General Public License
+tillsammans med detta program; om inte, skriv till
+Free Software Foundation, Inc., 51 Franklin Street, fFifth Floor,
 Boston, MA 02110-1301, USA.</value>
   </data>
   <data name="QueueSelection_AutoNameWarning" xml:space="preserve">
@@ -1637,6 +1637,12 @@ VLC och MPC-HC stöds. Övriga uppspelare kan också fungera men har inte testat
   </data>
   <data name="VideoView_AverageBitrate" xml:space="preserve">
     <value>Genomsnitt bitfrekvens (kbps):</value>
+  </data>
+  <data name="VideoView_TargetSize" xml:space="preserve">
+    <value>Målstorlek (MB):</value>
+  </data>
+  <data name="VideoView_TargetSizeTooltip" xml:space="preserve">
+    <value>Ange målfilstorleken i megabyte. Kodaren kommer att beräkna lämplig bitfrekvens för att uppnå ungefär denna filstorlek.</value>
   </data>
   <data name="VideoView_Codec" xml:space="preserve">
     <value>Videoenkodare:</value>

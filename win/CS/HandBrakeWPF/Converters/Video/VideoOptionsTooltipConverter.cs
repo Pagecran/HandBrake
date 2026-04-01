@@ -48,10 +48,24 @@ namespace HandBrakeWPF.Converters.Video
             {
                 string rfqp = HandBrakeEncoderHelpers.GetVideoQualityRateControlName(task.VideoEncoder.ShortName);
 
-                string quality = task.VideoEncodeRateType == VideoEncodeRateType.ConstantQuality ? string.Format("{0} {1}", task.Quality, rfqp) : string.Format("{0} {1}", task.VideoBitrate, " kbps");
+                string quality;
+                if (task.VideoEncodeRateType == VideoEncodeRateType.ConstantQuality)
+                {
+                    quality = string.Format("{0} {1}", task.Quality, rfqp);
+                }
+                else if (task.VideoEncodeRateType == VideoEncodeRateType.TargetSize)
+                {
+                    int targetSizeKB = task.TargetFileSize.HasValue ? (int)(task.TargetFileSize.Value * 1024) : 0;
+                    quality = string.Format("{0} KB (Target Size)", targetSizeKB);
+                }
+                else
+                {
+                    quality = string.Format("{0} {1}", task.VideoBitrate, " kbps");
+                }
+
                 string multiPass = null;
 
-                if (task.VideoEncodeRateType == VideoEncodeRateType.AverageBitrate)
+                if (task.VideoEncodeRateType == VideoEncodeRateType.AverageBitrate || task.VideoEncodeRateType == VideoEncodeRateType.TargetSize)
                 {
                     multiPass = task.MultiPass ? task.TurboAnalysisPass ? " (Multi-Pass with Turbo)" : " (Multi-Pass)" : string.Empty;
                 }
